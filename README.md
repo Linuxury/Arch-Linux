@@ -159,7 +159,7 @@ sudo cat /boot/grub/grub.cfg | grep ucode
 > Perform a Reboot and run in terminal for Essential tools
 
 ```javascript
-sudo pacman -S curl wget zip unzip nano vim net-tools dnsutils
+sudo pacman -S curl wget zip unzip nano vim net-tools dnsutils firefox --needed
 ```
 
 > Next, it's optional but highly recommended
@@ -181,7 +181,7 @@ Now that the back-end is taken care of, we can concentrate on installing a few o
 > I have them in one command, but you get the idea and could just run them individually or not at all, your choice.
 
 ```javascript
-paru -Syyu bluez bluez-utils fastfetch firefox fish ghostty gamemode gnome-disk-utility kvantum kwalletmanager kconnect networkmanager mangohud openrgb onlyoffice-bin pamac-aur pacman-contrib protonplus starship thunderbird timeshift steam ufw
+paru -Syyu bluez bluez-utils fastfetch firefox fish ghostty gamemode gnome-disk-utility kvantum kwalletmanager kconnect networkmanager nerd-fonts mangohud openrgb onlyoffice-bin pamac-aur pacman-contrib protonplus starship thunderbird timeshift steam ufw --needed
 ```
 
 ### E. Enable Trim for your SSD
