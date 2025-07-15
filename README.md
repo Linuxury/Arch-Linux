@@ -76,7 +76,7 @@ First, update your system by using:
 sudo pacman -Syu
 ```
 
-Then use install the required packages:
+Then install the required packages:
 
 ```javascript
 sudo pacman -S git base-devel --needed
