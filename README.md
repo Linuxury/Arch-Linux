@@ -46,11 +46,15 @@ Now that your are done with the initial installation and you are on your desktop
 
 > Install bash-completion for searches with "TAB"
 
-`sudo pacman -S bash-completion`
+```javascript
+sudo pacman -S bash-completion
+```
 
 Once installed run
 
-`nano ~/.bashrc`
+```javascript
+nano ~/.bashrc
+```
 
 Add to the last line so all sudo users could use it by default
 
