@@ -58,33 +58,47 @@ nano ~/.bashrc
 
 Add to the last line so all sudo users could use it by default
 
-`Complete -cf sudo`
+```javascript
+Complete -cf sudo
+```
 
 Now refresh by running
 
-`source ~/.bashrc`
+```javascript
+source ~/.bashrc
+```
 
 > Lets start with AUR Helper either paru or yay
 
 First update your system by using:
 
-`sudo pacman -Syu`
+```javascript
+sudo pacman -Syu
+```
 
 Then use install required packages:
 
-`sudo pacman -S git base-devel --needed`
+```javascript
+sudo pacman -S git base-devel --needed
+```
 
 Now you will copy the paru repository:
 
-`git clone https://aur.archlinux.org/paru.git`
+```javascript
+git clone https://aur.archlinux.org/paru.git
+```
 
 Navigate to the paru directory:
 
-`cd paru`
+```javascript
+cd paru
+```
 
 Once in the paru folder just build and install paru by using command:
 
-`makepkg -si`
+```javascript
+makepkg -si
+```
 
 Once completed just remove the folder by using the following command:
 
@@ -117,17 +131,23 @@ sudo reflector --latest 10 --sort rate --fastest 5 --save /etc/pacman.d/mirrorli
 
 First run this in terminal 
 
-`lscpu | grep "Vendor ID"`
+```javascript
+lscpu | grep "Vendor ID"
+```
 
 This will confirm what time of CPU you currently have in your machine (sanity check if not sure).
 
 For AMD use
 
-`sudo pacman -S amd-ucode`
+```javascript
+sudo pacman -S amd-ucode
+```
 
 For Intel use
 
-`sudo pacman -S intel-ucode`
+```javascript
+sudo pacman -S intel-ucode
+```
 
 Once that its completed you need to update your Grub so its recognized and included on boot.
 
@@ -138,7 +158,9 @@ sudo cat /boot/grub/grub.cfg | grep ucode
 
 > Perform a Reboot and run in terminal for Essential tools
 
-`sudo pacman -S curl wget zip unzip nano vim net-tools dnsutils`
+```javascript
+sudo pacman -S curl wget zip unzip nano vim net-tools dnsutils
+```
 
 > Next its optional but highly recommended
 
