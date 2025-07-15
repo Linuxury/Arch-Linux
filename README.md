@@ -1,16 +1,16 @@
 # Setting up Arch Linux during a clean install.
 
-### A. What to do before running Arch-install script.
+### A. What to do before running the Arch-install script.
 
-> Let's assume you have your ISO downloaded and loaded on your PC/Laptop ready for installation.
+> Let's assume you have your ISO downloaded and loaded on your PC/Laptop, ready for installation.
 
-Lets start by making some changes to **pacman.conf**, you will need to use a text editor you could use **nano** or **vim**. for the purpose of this guide we will use **nano**. Add the following code to start:
+Let's start by making some changes to **pacman.conf**, you will need to use a text editor, you could use **nano** or **vim**. For this guide, we will use **nano**. Add the following command to start:
 
 ```javascript
 sudo nano /etc/pacman.conf
 ```
 
-> We are only looking for 2 changes on this file. Find **# Misc options** in that area we are ***uncommenting*** "**Color**" by removing "**#**" and look few lines below for "**ParallelDownloads**" and change the number 5 with how many parallel downloads you are enabling. Its recommended to be 1to1 to your CPU cores for best performance
+> We are only looking for 2 changes on this file. Find **# Misc options** in that area we are ***uncommenting*** "**Color**" by removing "**#**" and look a few lines below for "**ParallelDownloads**" and change the number 5 with how many parallel downloads you are enabling. It's recommended to be 1to1 to your CPU cores for best performance
 
 ```javascript
 # Misc options
@@ -24,17 +24,17 @@ DownloadUser = alpm
 #DisableSandbox
 ```
 
-> By performing this changes you will enable terminal bash commands to have color on them and have a faster download due to the parallel downloads are increased.
+> By performing these changes, you will enable terminal bash commands to have color on them and have a faster download due to the parallel downloads are increased.
 
 ### B. Arch-install
 
-Run the following to command to start the script.
+Run the following command to start the script.
 
 ```javascript
 archinstall
 ```
 
-During this process you will be selecting your Mirror location, repositories, host-name, root password, add user and password, audio, network, additional packages, timezone and install once everything gets selected. (Go through all options so you don't miss anything and familiarize with the process.)
+During this process, you will be selecting your Mirror location, repositories, host-name, root password, add user and password, audio, network, additional packages, timezone, and install once everything gets selected. (Go through all options so you don't miss anything and familiarize yourself with the process.)
 
 > After selecting your local **Mirror**, select **Multilib** from repositories for 32bit libraries.
 
@@ -42,7 +42,7 @@ During this process you will be selecting your Mirror location, repositories, ho
 
 ### C. At first boot into your desktop environment.
 
-Now that your are done with the initial installation and you are on your desktop environment of choosing there are few things to take care before you could call it a day.
+Now that you are done with the initial installation and you are on your desktop environment of choice, there are a few things to take care of before you call it a day.
 
 > Install bash-completion for searches with "TAB"
 
@@ -68,15 +68,15 @@ Now refresh by running
 source ~/.bashrc
 ```
 
-> Lets start with AUR Helper either paru or yay
+> Let's start with AUR Helper, either paru or yay
 
-First update your system by using:
+First, update your system by using:
 
 ```javascript
 sudo pacman -Syu
 ```
 
-Then use install required packages:
+Then use install the required packages:
 
 ```javascript
 sudo pacman -S git base-devel --needed
@@ -94,20 +94,20 @@ Navigate to the paru directory:
 cd paru
 ```
 
-Once in the paru folder just build and install paru by using command:
+Once in the paru folder, just build and install paru by using the command:
 
 ```javascript
 makepkg -si
 ```
 
-Once completed just remove the folder by using the following command:
+Once completed, just remove the folder by using the following command:
 
 ```javascript
 cd ..
 rm -rf paru
 ```
 
-For yay its almost the same use the following commands:
+For yay, it's almost the same. Use the following commands:
 
 ```javascript
 sudo pacman -S git base-devel --needed
@@ -118,18 +118,18 @@ cd ..
 rm -rf yay
 ```
 
-> Now lets run an benchmark and select the fastest mirrors for pacman to use.
+> Now lets run a benchmark and select the fastest mirrors for pacman to use.
 
-Paste the following command into terminal:
+Paste the following command into the terminal:
 
 ```javascript
 sudo pacman -S reflector rsync
 sudo reflector --latest 10 --sort rate --fastest 5 --save /etc/pacman.d/mirrorlist
 ```
 
-> Now lets take care of Micro Code
+> Now let's take care of Micro Code
 
-First run this in terminal 
+First, run this in the  terminal 
 
 ```javascript
 lscpu | grep "Vendor ID"
@@ -149,7 +149,7 @@ For Intel use
 sudo pacman -S intel-ucode
 ```
 
-Once that its completed you need to update your Grub so its recognized and included on boot.
+Once that its completed, you need to update your Grub so its recognized and included on boot.
 
 ```javascript
 sudo grub-mkconfig -o /boot/grub/grub.cfg
@@ -162,11 +162,11 @@ sudo cat /boot/grub/grub.cfg | grep ucode
 sudo pacman -S curl wget zip unzip nano vim net-tools dnsutils
 ```
 
-> Next its optional but highly recommended
+> Next, it's optional but highly recommended
 
 CachyOS Repositories
 
-Include the following command in terminal
+Include the following command in the terminal
 
 ```javascript
 curl https://mirror.cachyos.org/cachyos-repo.tar.xz -o cachyos-repo.tar.xz
@@ -176,9 +176,9 @@ sudo ./cachyos-repo.sh
 
 ### D. Essential Applications
 
-Now that the back-end in taken care of we could just concentrate and install few other applications that I use on all my installations and had become my default. Bluez and Bluez-utils for my Bluetooth, Fastfetch, Firefox, Fish, Ghostty, Gamemode, Kvantum, NetworkManager for my network, Mangohud, OpenRGB, Onlyoffice-bin, Pamac-AUR, Pacman-contrib, Starship, Thunderbird, Steam and UFW.
+Now that the back-end is taken care of, we can concentrate on installing a few other applications that I use on all my installations and have become my default. Bluez and Bluez-utils for my Bluetooth, Fastfetch, Firefox, Fish, Ghostty, Gamemode, Kvantum, NetworkManager for my network, Mangohud, OpenRGB, Onlyoffice-bin, Pamac-AUR, Pacman-contrib, Starship, Thunderbird, Steam, and UFW.
 
-> I will have them in once command but you get the idea and could just run them individually or not at all your choice.
+> I will have them in one command, but you get the idea and could just run them individually or not at all, your choice.
 
 ```javascript
 paru -Syyu bluez bluez-utils fastfetch firefox fish ghostty gamemode gnome-disk-utility kvantum kwalletmanager kconnect networkmanager mangohud openrgb onlyoffice-bin pamac-aur pacman-contrib protonplus starship thunderbird timeshift steam ufw
@@ -186,7 +186,7 @@ paru -Syyu bluez bluez-utils fastfetch firefox fish ghostty gamemode gnome-disk-
 
 ### E. Enable Trim for your SSD
 
-On your terminal run the following command
+On your terminal, run the following command
 
 ```javascript
 sudo systemctl enable fstrim.timer
@@ -195,14 +195,14 @@ sudo systemctl start fstrim.timer
 
 ### F. Enable Bluetooth
 
-On your terminal run the following command
+On your terminal, run the following command
 
 ```javascript
 sudo systemctl start bluetooth.service
 sudo systemctl enable bluetooth.service	
 ```
 
-To confirm its working use the following command
+To confirm it's working, use the following command
 
 ```javascript
 systemctl status bluetooth.service
@@ -210,14 +210,14 @@ systemctl status bluetooth.service
 
 ### G. Enable Network Management
 
-On your terminal run the following command
+On your terminal, run the following command
 
 ```javascript
 sudo systemctl start NetworkManager.service
 sudo systemctl enable NetworkManager.service
 ```
 
-To confirm its working use the following command
+To confirm it's working, use the following command
 
 ```javascript
 systemctl status NetworkManager.service
@@ -225,7 +225,7 @@ systemctl status NetworkManager.service
 
 ### H. Enable your Firewall (UFW)
 
-On your terminal run the following command
+On your terminal, run the following command
 
 ```javascript
 # Enable UFW
@@ -257,7 +257,7 @@ sudo ufw allow 5355/udp
 sudo ufw allow 1714:1764/udp
 ```
 
-Finally to confirm all are added (they are mostly to allow steam services)
+Finally, to confirm all are added (they are mostly to allow Steam services)
 
 ```javascript
 # Show the status of UFW
@@ -272,7 +272,7 @@ Open a Terminal
 https://github.com/Linuxury/dotfiles
 ```
 
-Navigate to the desired directory where they want to store the dotfiles e.g., `~/Documents/GitRepos`)
+Navigate to the desired directory where they want to store the dotfiles, e.g., `~/Documents/GitRepos`)
 
 ```javascript
 mkdir -p ~/Documents/GitRepos
@@ -285,7 +285,7 @@ Clone the repository using the provided URL:
 git clone https://github.com/linuxury/dotfiles.git
 ```
 
-or, if using SSH:
+Or, if using SSH:
 
 ```javascript
 git clone git@github.com:linuxury/dotfiles.git
@@ -319,5 +319,5 @@ PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 gamemoderun mangohud %command%
 
 ### Additional Steps
 
-- **Proton Experimental**: Go inside `Steam` and look for it on installed application, then go to options and select beta option and select `bleeding-edge` 
-- **ProtonPlus**: After running at least once `Steam` and `Lutris`, you will be able to download proton files for them. For `Steam` you need `Proton-CachyOS` and for `Lutris` you need `Wine-Staging-Tkg` (at least until `Lutris` gets updated and current error gets fixed.
+- **Proton Experimental**: Go inside `Steam` and look for it on installed applications, then go to options and select the beta option, and select `bleeding-edge` 
+- **ProtonPlus**: After running at least once `Steam` and `Lutris`, you will be able to download proton files for them. For `Steam`, you need `Proton-CachyOS`, and for `Lutris`, you need `Wine-Staging-Tkg` (at least until `Lutris` gets updated and the current error gets fixed.
