@@ -178,7 +178,7 @@ sudo ./cachyos-repo.sh
 
 Now that the back-end is taken care of, we can concentrate on installing a few other applications that I use on all my installations and have become my default. Bluez and Bluez-utils for my Bluetooth, Fastfetch, Firefox, Fish, Ghostty, Gamemode, Kvantum, NetworkManager for my network, Mangohud, OpenRGB, Onlyoffice-bin, Pamac-AUR, Pacman-contrib, Starship, Thunderbird, Steam, and UFW.
 
-> I will have them in one command, but you get the idea and could just run them individually or not at all, your choice.
+> I have them in one command, but you get the idea and could just run them individually or not at all, your choice.
 
 ```javascript
 paru -Syyu bluez bluez-utils fastfetch firefox fish ghostty gamemode gnome-disk-utility kvantum kwalletmanager kconnect networkmanager mangohud openrgb onlyoffice-bin pamac-aur pacman-contrib protonplus starship thunderbird timeshift steam ufw
@@ -257,7 +257,7 @@ sudo ufw allow 5355/udp
 sudo ufw allow 1714:1764/udp
 ```
 
-Finally, to confirm all are added (they are mostly to allow Steam services)
+Finally, to confirm they have all been added (they are mostly to allow Steam services)
 
 ```javascript
 # Show the status of UFW
@@ -272,7 +272,7 @@ Open a Terminal
 https://github.com/Linuxury/dotfiles
 ```
 
-Navigate to the desired directory where they want to store the dotfiles, e.g., `~/Documents/GitRepos`)
+Navigate to the desired directory where they want to store the dotfiles, e.g., `~/Documents/GitRepos`
 
 ```javascript
 mkdir -p ~/Documents/GitRepos
