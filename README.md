@@ -30,7 +30,9 @@ DownloadUser = alpm
 
 Run the following to command to start the script.
 
-`archinstall`
+```javascript
+archinstall
+```
 
 During this process you will be selecting your Mirror location, repositories, host-name, root password, add user and password, audio, network, additional packages, timezone and install once everything gets selected. (Go through all options so you don't miss anything and familiarize with the process.)
 
