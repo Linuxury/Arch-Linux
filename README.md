@@ -4,13 +4,13 @@
 
 > Let's assume you have your ISO downloaded and loaded on your PC/Laptop, ready for installation.
 
-Let's start by making some changes to **pacman.conf**, you will need to use a text editor, you could use **nano** or **vim**. For this guide, we will use **nano**. Add the following command to start:
+Let's start by making some changes to `pacman.conf`, you will need to use a text editor, you could use `nano` or `vim`. For this guide, we will use `nano`. Add the following command to start:
 
 ```javascript
 sudo nano /etc/pacman.conf
 ```
 
-> We are only looking for 2 changes on this file. Find **# Misc options** in that area we are ***uncommenting*** "**Color**" by removing "**#**" and look a few lines below for "**ParallelDownloads**" and change the number 5 with how many parallel downloads you are enabling. It's recommended to be 1to1 to your CPU cores for best performance
+> We are only looking for 2 changes on this file. Find **# Misc options** in that area we are `uncommenting` `Color` by removing `#` and look a few lines below for `ParallelDownloads` and change the number 5 to how many parallel downloads you are enabling. It's recommended to be 1to1 to your CPU cores for best performance
 
 ```javascript
 # Misc options
@@ -36,7 +36,7 @@ archinstall
 
 During this process, you will be selecting your Mirror location, repositories, host-name, root password, add user and password, audio, network, additional packages, timezone, and install once everything gets selected. (Go through all options so you don't miss anything and familiarize yourself with the process.)
 
-> After selecting your local **Mirror**, select **Multilib** from repositories for 32bit libraries.
+> After selecting your local `Mirror`, select `Multilib` from repositories for 32bit libraries.
 
 > For Additional Packages you could search by typing " **/&#32;**".
 
@@ -268,10 +268,6 @@ sudo ufw status verbose
 
 Open a Terminal
 
-```javascript
-https://github.com/Linuxury/dotfiles
-```
-
 Navigate to the desired directory where they want to store the dotfiles, e.g., `~/Documents/GitRepos`
 
 ```javascript
@@ -303,12 +299,12 @@ cd dotfiles
 
 ```javascript
 # Create symlinks for each application
-ln -s ~/Documents/GitRepos/dotfiles/MangoHud ~/.config/MangoHud
-ln -s ~/Documents/GitRepos/dotfiles/Kvantum ~/.config/Kvantum
-ln -s ~/Documents/GitRepos/dotfiles/fish ~/.config/fish
-ln -s ~/Documents/GitRepos/dotfiles/fastfetch ~/.config/fastfetch
-ln -s ~/Documents/GitRepos/dotfiles/kitty ~/.config/kitty
-ln -s ~/Documents/GitRepos/dotfiles/starship.toml ~/.config/starship.toml
+    ln -s ~/Documents/GitRepos/dotfiles/MangoHud ~/.config
+    ln -s ~/Documents/GitRepos/dotfiles/Kvantum ~/.config
+    ln -s ~/Documents/GitRepos/dotfiles/fish ~/.config
+    ln -s ~/Documents/GitRepos/dotfiles/fastfetch ~/.config
+    ln -s ~/Documents/GitRepos/dotfiles/ghostty ~/.config
+    ln -s ~/Documents/GitRepos/dotfiles/starship ~/.config
 ```
 
 ### J. Steam Launch Options
