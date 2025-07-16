@@ -310,7 +310,7 @@ cd dotfiles
 ### J. Steam Launch Options
 
 ```javascript
-PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 gamemoderun mangohud %command%
+PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 PROTON_FSR4_UPGRADE=1 gamemoderun mangohud %command%
 ```
 
 ### Additional Steps
