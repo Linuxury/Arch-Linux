@@ -317,3 +317,37 @@ PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 PROTON_FSR4_UPGRADE=1 gamemoderun ma
 
 - **Proton Experimental**: Go inside `Steam` and look for it on installed applications, then go to options and select the beta option, and select `bleeding-edge` 
 - **ProtonPlus**: After running at least once `Steam` and `Lutris`, you will be able to download proton files for them. For `Steam`, you need `Proton-CachyOS`, and for `Lutris`, you need `Wine-Staging-Tkg` (at least until `Lutris` gets updated and the current error gets fixed.
+
+### K. GRUB [optional]
+
+By default, `GRUB` shows you a couple of useful things with a timer added to it, but I don't like that. I prefer a faster boot with minimal information shown on the screen. Let's open the `GRUB` config files located in `/etc/default/grub` with a text editor.
+
+```javascript
+sudo nano /etc/default/grub
+```
+or
+```javascript
+sudo nvim /etc/default/grub
+```
+
+Look for the following: 
+`GRUB_TIMEOUT=5` and change it to `0`
+`GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet"` and change it to `"loglevel=0 quiet splash"`
+`GRUB_TIMEOUT_STYLE=menu` and change it to `hidden`
+Add this below the `GRUB_TIMEOUT_STYLE` line
+`GRUB_HIDDEN_TIMEOUT=0`
+`GRUB_HIDDEN_TIMEOUT_QUIET=true`
+
+After all changes, it should look something similar to this:
+<img width="1116" height="674" alt="image" src="https://github.com/user-attachments/assets/bf3ecc61-4578-4576-8bfc-9e5702b3114d" />
+
+### L. Steam Launch Options
+
+```javascript
+PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 PROTON_FSR4_UPGRADE=1 gamemoderun mangohud %command%
+```
+
+### Additional Steps
+
+- **Proton Experimental**: Go inside `Steam` and look for it on installed applications, then go to options and select the beta option, and select `bleeding-edge` 
+- **ProtonPlus**: After running at least once `Steam` and `Lutris`, you will be able to download proton files for them. For `Steam`, you need `Proton-CachyOS`, and for `Lutris`, you need `Wine-Staging-Tkg` (at least until `Lutris` gets updated and the current error gets fixed.
