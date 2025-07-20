@@ -342,13 +342,21 @@ Add this below the `GRUB_TIMEOUT_STYLE` line
 After all changes, it should look something similar to this:
 <img width="1116" height="674" alt="image" src="https://github.com/user-attachments/assets/bf3ecc61-4578-4576-8bfc-9e5702b3114d" />
 
-### L. Steam Launch Options
+### L. SDDM Numlock enabled by default [optional]
+
+By default, `SDDM` will have this feature off, so let's change it
 
 ```javascript
-PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 PROTON_FSR4_UPGRADE=1 gamemoderun mangohud %command%
+sudo nano /etc/sddm.conf.d/kde_settings.conf
+```
+or
+```javascript
+sudo nvim /etc/sddm.conf.d/kde_settings.conf
 ```
 
-### Additional Steps
+Now, all you need to do is look for `[General]` and add a new line to that group with
 
-- **Proton Experimental**: Go inside `Steam` and look for it on installed applications, then go to options and select the beta option, and select `bleeding-edge` 
-- **ProtonPlus**: After running at least once `Steam` and `Lutris`, you will be able to download proton files for them. For `Steam`, you need `Proton-CachyOS`, and for `Lutris`, you need `Wine-Staging-Tkg` (at least until `Lutris` gets updated and the current error gets fixed.
+`Numlock=on`
+
+After the changes, it should look something similar to this:
+<img width="1118" height="670" alt="image" src="https://github.com/user-attachments/assets/f58c0688-6301-46f2-ba5d-57c25ba3406d" />
