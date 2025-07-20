@@ -34,15 +34,15 @@ Run the following command to start the script.
 archinstall
 ```
 
-During this process, you will be selecting your Mirror location, repositories, host-name, root password, add user and password, audio, network, additional packages, timezone, and install once everything gets selected. (Go through all options so you don't miss anything and familiarize yourself with the process.)
+During this process, you will select your Mirror location, repositories, hostname, root password, add user and password, audio settings, network settings, additional packages, timezone, and install once everything is selected. (Go through all options so you don't miss anything and familiarize yourself with the process.)
 
-> After selecting your local `Mirror`, select `Multilib` from repositories for 32bit libraries.
+> After selecting your local `Mirror`, select `Multilib` from repositories for 32-bit libraries.
 
 > For Additional Packages you could search by typing " **/&#32;**".
 
 ### C. At first boot into your desktop environment.
 
-Now that you are done with the initial installation and you are on your desktop environment of choice, there are a few things to take care of before you call it a day.
+Now that you have completed the initial installation and are on your desktop environment of choice, there are a few things to attend to before you call it a day.
 
 > Install bash-completion for searches with "TAB"
 
@@ -118,7 +118,7 @@ cd ..
 rm -rf yay
 ```
 
-> Now lets run a benchmark and select the fastest mirrors for pacman to use.
+> Now let's run a benchmark and select the fastest mirrors for pacman to use.
 
 Paste the following command into the terminal:
 
@@ -135,7 +135,7 @@ First, run this in the  terminal
 lscpu | grep "Vendor ID"
 ```
 
-This will confirm what time of CPU you currently have in your machine (sanity check if not sure).
+This will confirm what type of CPU you currently have in your machine (sanity check if not sure).
 
 For AMD use
 
@@ -149,7 +149,7 @@ For Intel use
 sudo pacman -S intel-ucode
 ```
 
-Once that its completed, you need to update your Grub so its recognized and included on boot.
+Once that its completed, you need to update your Grub so it's recognized and included on boot.
 
 ```javascript
 sudo grub-mkconfig -o /boot/grub/grub.cfg
