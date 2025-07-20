@@ -331,12 +331,12 @@ sudo nvim /etc/default/grub
 ```
 
 Look for the following: 
-`GRUB_TIMEOUT=5` and change it to `0`
-`GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet"` and change it to `"loglevel=0 quiet splash"`
-`GRUB_TIMEOUT_STYLE=menu` and change it to `hidden`
+- `GRUB_TIMEOUT=5` and change it to `0`
+- `GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet"` and change it to `"loglevel=0 quiet splash"`
+- `GRUB_TIMEOUT_STYLE=menu` and change it to `hidden`
 Add this below the `GRUB_TIMEOUT_STYLE` line
-`GRUB_HIDDEN_TIMEOUT=0`
-`GRUB_HIDDEN_TIMEOUT_QUIET=true`
+- `GRUB_HIDDEN_TIMEOUT=0`
+- `GRUB_HIDDEN_TIMEOUT_QUIET=true`
 
 After all changes, it should look something similar to this:
 <img width="1116" height="674" alt="image" src="https://github.com/user-attachments/assets/bf3ecc61-4578-4576-8bfc-9e5702b3114d" />
