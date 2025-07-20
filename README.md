@@ -334,6 +334,7 @@ Look for the following:
 - `GRUB_TIMEOUT=5` and change it to `0`
 - `GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet"` and change it to `"loglevel=0 quiet splash"`
 - `GRUB_TIMEOUT_STYLE=menu` and change it to `hidden`
+</br>
 Add this below the `GRUB_TIMEOUT_STYLE` line
 - `GRUB_HIDDEN_TIMEOUT=0`
 - `GRUB_HIDDEN_TIMEOUT_QUIET=true`
