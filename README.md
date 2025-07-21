@@ -181,7 +181,7 @@ Now that the back-end is taken care of, we can concentrate on installing a few o
 > I have them in one command, but you get the idea and could just run them individually or not at all, your choice.
 
 ```javascript
-paru -Syyu bluez bluez-utils fastfetch firefox fish ghostty gamemode gnome-disk-utility kvantum kwalletmanager kconnect networkmanager nerd-fonts mesa-git mangohud openrgb onlyoffice-bin pamac-aur pacman-contrib protonplus starship thunderbird timeshift steam ufw --needed
+paru -Syyu bluez bluez-utils fastfetch fish ghostty gamemode gnome-disk-utility kvantum kwalletmanager kconnect networkmanager nerd-fonts mesa-git mangohud openrgb onlyoffice-bin pamac-aur pacman-contrib protonplus starship thunderbird timeshift steam ufw --needed
 ```
 
 ### E. Enable Trim for your SSD
@@ -317,7 +317,7 @@ PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 PROTON_FSR4_UPGRADE=1 gamemoderun ma
 ### Additional Steps
 
 - **Proton Experimental**: Go inside `Steam` and look for it on installed applications, then go to options and select the beta option, and select `bleeding-edge` 
-- **ProtonPlus**: After running at least once `Steam` and `Lutris`, you will be able to download proton files for them. For `Steam`, you need `Proton-CachyOS`, and for `Lutris`, you need `Wine-Staging-Tkg` (at least until `Lutris` gets updated and the current error gets fixed.
+- **ProtonPlus**: After running at least once `Steam` and `Lutris`, you will be able to download proton files for them. For `Steam`, you need `Proton-CachyOS`, and for `Lutris`, you need `Wine-Staging-Tkg` (at least until `Lutris` gets updated and the current error gets fixed).
 
 ### K. GRUB [optional]
 
