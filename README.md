@@ -348,6 +348,11 @@ Add this below the `GRUB_TIMEOUT_STYLE` line
 After all changes, it should look something similar to this:
 <img width="1116" height="674" alt="image" src="https://github.com/user-attachments/assets/bf3ecc61-4578-4576-8bfc-9e5702b3114d" />
 
+Run this to generate a new `GRUB`
+```javascript
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
 ### L. SDDM Numlock enabled by default [optional]
 
 By default, `SDDM` will have this feature off, so let's change it
