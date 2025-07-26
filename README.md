@@ -24,11 +24,11 @@ DownloadUser = alpm
 #DisableSandbox
 ```
 
-> By performing these changes, you will enable terminal bash commands to have color on them and have a faster download due to the parallel downloads are increased.
+> By performing these changes, you will enable terminal bash commands to have color on them and have a faster download because the parallel downloads are increased.
 
 ### B. Arch-install
 
-Run the following command to start the script.
+You can just run the following command to start the script.
 
 ```javascript
 archinstall
@@ -40,7 +40,7 @@ During this process, you will select your Mirror location, repositories, hostnam
 
 > For Additional Packages you could search by typing " **/&#32;**".
 
-### C. At first boot into your desktop environment.
+### C. At first, boot into your desktop environment.
 
 Now that you have completed the initial installation and are on your desktop environment of choice, there are a few things to attend to before you call it a day.
 
@@ -66,6 +66,15 @@ Now refresh by running
 
 ```javascript
 source ~/.bashrc
+```
+
+> Now let's run a benchmark and select the fastest mirrors for pacman to use.
+
+Paste the following command into the terminal:
+
+```javascript
+sudo pacman -S reflector rsync
+sudo reflector --latest 10 --sort rate --fastest 5 --save /etc/pacman.d/mirrorlist
 ```
 
 > Let's start with AUR Helper, either paru or yay
@@ -156,7 +165,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo cat /boot/grub/grub.cfg | grep ucode
 ```
 
-> Perform a Reboot and run in terminal for Essential tools
+> Perform a Reboot and run in a terminal for Essential tools
 
 ```javascript
 sudo pacman -S curl wget zip unzip nano vim net-tools dnsutils firefox --needed
