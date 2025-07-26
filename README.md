@@ -68,7 +68,13 @@ nano ~/.bashrc
 Add to the last line so all sudo users could use it by default
 
 ```javascript
-Complete -cf sudo
+# Bash-Completion
+#Complete -cf sudo
+complete -cf sudo
+
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    fi
 ```
 
 Now refresh by running
