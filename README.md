@@ -81,37 +81,36 @@ source ~/.bashrc
 
 First, update your system by using:
 
-```javascript
-sudo pacman -Syu
-```
+`sudo pacman -Syu`
 
 Then install the required packages:
 
-```javascript
-sudo pacman -S git base-devel --needed
-```
+`sudo pacman -S git base-devel --needed`
 
 Now you will copy the paru repository:
 
-```javascript
-git clone https://aur.archlinux.org/paru.git
-```
+`git clone https://aur.archlinux.org/paru.git`
 
 Navigate to the paru directory:
 
-```javascript
-cd paru
-```
+`cd paru`
 
 Once in the paru folder, just build and install paru by using the command:
 
-```javascript
-makepkg -si
-```
+`makepkg -si`
 
 Once completed, just remove the folder by using the following command:
 
+`cd ..
+rm -rf paru`
+
+It should be something like this
+
 ```javascript
+sudo pacman -S git base-devel --needed
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
 cd ..
 rm -rf paru
 ```
