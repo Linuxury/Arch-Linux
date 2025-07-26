@@ -371,3 +371,21 @@ Now, all you need to do is look for `[General]` and add a new line to that group
 
 After the changes, it should look something similar to this:
 <img width="1118" height="670" alt="image" src="https://github.com/user-attachments/assets/f58c0688-6301-46f2-ba5d-57c25ba3406d" />
+
+### L. Add Fish to /etc/shells [optional]
+
+    Ensure the Fish shell's path is listed in /etc/shells. If it's not present, add it by running: 
+
+Code
+
+    echo /usr/bin/fish | sudo tee -a /etc/shells
+
+    Change default shell with chsh: Use the chsh command to change your default shell to Fish:
+
+Code
+
+    chsh -s /usr/bin/fish
+
+You will be prompted to enter your password.
+
+    Log out and log back in: For the change to take effect, log out of your current session and then log back in. Your terminal should now open with Fish as the default shell.
