@@ -2,15 +2,15 @@
 
 ### A. What to do before running the Arch-install script.
 
-> Let's assume you have your ISO downloaded and loaded on your PC/Laptop, ready for installation.
+> Let's assume you have downloaded and loaded it into your PC/Laptop, ready for installation.
 
-Let's start by making some changes to `pacman.conf`, you will need to use a text editor, you could use `nano` or `vim`. For this guide, we will use `nano`. Add the following command to start:
+Let's start by making some changes to `pacman.conf`. You will need to use a text editor; you could use `nano` or `vim`. For this guide, we will use `nano`. Add the following command to start:
 
 ```javascript
 sudo nano /etc/pacman.conf
 ```
 
-> We are only looking for 2 changes on this file. Find **# Misc options** in that area we are `uncommenting` `Color` by removing `#` and look a few lines below for `ParallelDownloads` and change the number 5 to how many parallel downloads you are enabling. It's recommended to be 1to1 to your CPU cores for best performance
+> We are only looking for a few changes in this file. Find **# Misc options** in that area we are `uncommenting` `Color` and `VerbosePkgLists` by removing `#` and look a few lines below for `ParallelDownloads` and change the number 5 to how many parallel downloads you are enabling. It's recommended to be 1to1 to your CPU cores for best performance. Also, add to the last line of that group `ILoveCandy`.
 
 ```javascript
 # Misc options
@@ -18,10 +18,11 @@ sudo nano /etc/pacman.conf
 Color
 #NoProgressBar
 CheckSpace
-#VerbosePkgLists
+VerbosePkgLists
 ParallelDownloads = 24
 DownloadUser = alpm
 #DisableSandbox
+ILoveCandy
 ```
 
 > By performing these changes, you will enable terminal bash commands to have color on them and have a faster download because the parallel downloads are increased.
