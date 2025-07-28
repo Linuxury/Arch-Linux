@@ -384,6 +384,18 @@ Change default shell with chsh: Use the chsh command to change your default shel
 ```javascript
 chsh -s /usr/bin/fish
 ```
+
 You will be prompted to enter your password.
 
 Log out and log back in: For the change to take effect, log out of your current session and then log back in. Your terminal should now open with Fish as the default shell.
+
+### N.Enabling Global Menu [optional]
+
+For some apps, such as Visual Studio Code, the global menu may not function properly or may be attached to the parent app instead of the panel.
+Terminal window
+
+To enable global menu support, run the command and restart the app.
+```javascript
+sudo pacman -S appmenu-gtk-module libdbusmenu-glib
+```
+
