@@ -27,6 +27,15 @@ ILoveCandy
 
 > By performing these changes, you will enable terminal bash commands to have color on them and have a faster download because the parallel downloads are increased.
 
+Now let's run a benchmark and select the fastest mirrors for pacman to use.
+
+> Paste the following command into the terminal:
+
+```javascript
+sudo pacman -S reflector rsync
+sudo reflector --country 'United States' --sort rate --latest 20 --save /etc/pacman.d/mirrorlist
+reflector --verbose
+```
 ### B. Arch-install
 
 You can just run the following command to start the script.
@@ -46,14 +55,7 @@ During this process, you will select your Mirror location, repositories, hostnam
 Now that you have completed the initial installation and are on your desktop environment of choice, there are a few things to attend to before you call it a day.
 
 
-> Now let's run a benchmark and select the fastest mirrors for pacman to use.
 
-Paste the following command into the terminal:
-
-```javascript
-sudo pacman -S reflector rsync
-sudo reflector --latest 10 --sort rate --fastest 5 --save /etc/pacman.d/mirrorlist
-```
 > Install bash-completion for searches with "TAB"
 
 ```javascript
