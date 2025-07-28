@@ -27,7 +27,7 @@ ILoveCandy
 
 > By performing these changes, you will enable terminal bash commands to have color on them and have a faster download because the parallel downloads are increased.
 
-Now let's run a benchmark and select the fastest mirrors for pacman to use.
+Now, let's run a benchmark and select the fastest mirrors for pacman to use.
 
 > Paste the following command into the terminal:
 
@@ -329,7 +329,7 @@ PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 PROTON_DLSS_INDICATOR=1 PROTON_FSR4_
 
 ### K. GRUB [optional]
 
-By default, `GRUB` shows you a couple of useful things with a timer added to it, but I don't like that. I prefer a faster boot with minimal information shown on the screen. Let's open the `GRUB` config files located in `/etc/default/grub` with a text editor.
+By default, `GRUB` displays a couple of useful options with a timer added to them, but I prefer not to use that. I prefer a faster boot with minimal information shown on the screen. Let's open the `GRUB` config files located in `/etc/default/grub` with a text editor.
 
 ```javascript
 sudo nano /etc/default/grub
@@ -389,7 +389,7 @@ You will be prompted to enter your password.
 
 Log out and log back in: For the change to take effect, log out of your current session and then log back in. Your terminal should now open with Fish as the default shell.
 
-### N.Enabling Global Menu [optional]
+### N. Enabling Global Menu [optional]
 
 For some apps, such as Visual Studio Code, the global menu may not function properly or may be attached to the parent app instead of the panel.
 Terminal window
