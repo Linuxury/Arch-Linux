@@ -321,6 +321,16 @@ cd dotfiles
 ```javascript
 PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 PROTON_DLSS_INDICATOR=1 PROTON_FSR4_UPGRADE=1 PROTON_DLSS_UPGRADE=1 gamemoderun %command%
 ```
+List of commands:</br>
+`PROTON_ENABLE_WAYLAND=1` = Will enable Wayland driver support </br>
+`PROTON_ENABLE_HDR=1` = Will enable HDR </br>
+`PROTON_DLSS_INDICATOR=1` `PROTON_DLSS_UPGRADE=1` = Will enable DLSS/FSR conversion in games. </br>
+`PROTON_FSR4_UPGRADE=1` = Will upgrade FSR 3.1 to FSR 4</br>
+`SteamDeck=1` = Will enable Steam Deck Mode (some games only work with this flag)</br>
+`gamemoderun` = Will enable a mode that increases the priority of the game.</br>
+`mangohud` = Will enable Game Statistics in-game (if the Steam overlay doesn't work)</br>
+`%command%` = Always add this to any command for it to work
+
 
 ### Additional Steps
 
