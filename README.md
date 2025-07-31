@@ -32,7 +32,6 @@ Now, let's run a benchmark and select the fastest mirrors for pacman to use.
 > Paste the following command into the terminal:
 
 ```javascript
-sudo pacman -S reflector rsync
 sudo reflector --country 'United States' --sort rate --latest 10 --save /etc/pacman.d/mirrorlist
 reflector --verbose
 ```
@@ -189,7 +188,7 @@ Now that the back-end is taken care of, we can concentrate on installing a few o
 > I have them in one command, but you get the idea and could just run them individually or not at all, your choice.
 
 ```javascript
-paru -Syyu bluez bluez-utils fastfetch fish ghostty gamemode gnome-disk-utility kvantum kwalletmanager kconnect networkmanager nerd-fonts mesa-git mangohud openrgb onlyoffice-bin pamac-aur pacman-contrib power-profiles-daemon protonplus starship thunderbird timeshift steam ufw --needed
+paru -Syyu bluez bluez-utils fastfetch fish ghostty gamemode gnome-disk-utility kvantum kwalletmanager kconnect networkmanager nerd-fonts mesa-git mangohud openrgb onlyoffice-bin pamac-aur pacman-contrib power-profiles-daemon proton-ge-custom-bin protonplus reflector rsync starship thunderbird timeshift steam ufw --needed
 ```
 
 ### E. Enable Trim for your SSD
