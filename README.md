@@ -27,7 +27,7 @@ ILoveCandy
 
 > By performing these changes, you will enable terminal bash commands to have color on them and have a faster download because the parallel downloads are increased.
 
-Now, let's run a benchmark and select the fastest mirrors for pacman to use.
+Now, let's run a benchmark and select the fastest mirrors for pacman to use. [optional]
 
 > Paste the following command into the terminal:
 
@@ -171,16 +171,26 @@ sudo pacman -S curl wget zip unzip nano vim net-tools dnsutils firefox --needed
 
 > Next, it's optional but highly recommended
 
-CachyOS Repositories
+Chaotic AUR
 
 Include the following command in the terminal
 
 ```javascript
-curl https://mirror.cachyos.org/cachyos-repo.tar.xz -o cachyos-repo.tar.xz
-tar xvf cachyos-repo.tar.xz && cd cachyos-repo
-sudo ./cachyos-repo.sh
-```
+sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+sudo pacman-key --lsign-key 3056513887B78AEB
 
+sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
+sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+```
+Then, we append (adding at the end) the following to /etc/pacman.conf:
+```javascript
+[chaotic-aur]
+Include = /etc/pacman.d/chaotic-mirrorlist
+```
+Recommend running a full system update, along with syncing our mirrorlist.
+```javascript
+sudo pacman -Syu
+```
 ### D. Essential Applications
 
 Now that the back-end is taken care of, we can concentrate on installing a few other applications that I use on all my installations and have become my default. Bluez and Bluez-utils for my Bluetooth, Fastfetch, Firefox, Fish, Ghostty, Gamemode, Kvantum, NetworkManager for my network, Mangohud, OpenRGB, Onlyoffice-bin, Pamac-AUR, Pacman-contrib, Starship, Thunderbird, Steam, and UFW.
@@ -188,7 +198,7 @@ Now that the back-end is taken care of, we can concentrate on installing a few o
 > I have them in one command, but you get the idea and could just run them individually or not at all, your choice.
 
 ```javascript
-paru -Syyu bluez bluez-utils fastfetch fish ghostty gamemode gnome-disk-utility kvantum kwalletmanager kconnect legacy-launcher networkmanager nerd-fonts mesa-git mangohud openrgb onlyoffice-bin pamac-aur pacman-contrib power-profiles-daemon proton-ge-custom-bin protonplus reflector rsync starship thunderbird timeshift steam ufw kdotool glfw glfw-wayland-minecraft-cursorfix topgrade-bin --needed
+paru -Syyu bluez bluez-utils fastfetch fish ghostty gamemode gnome-disk-utility kvantum kwalletmanager kconnect legacy-launcher networkmanager nerd-fonts mesa-git mangohud openrgb onlyoffice-bin pamac-aur pacman-contrib power-profiles-daemon proton-ge-custom-bin protonplus reflector rsync starship thunderbird timeshift steam ufw kdotool glfw glfw-wayland-minecraft-cursorfix --needed
 ```
 
 ### E. Enable Trim for your SSD
