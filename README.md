@@ -47,7 +47,7 @@ During this process, you will select your Mirror location, repositories, hostnam
 
 > After selecting your local `Mirror`, select `Multilib` from repositories for 32-bit libraries.
 
-> For Additional Packages you could search by typing " **/&#32;**". /wget /librewolf
+> For Additional Packages you could search by typing " **/&#32;**". /wget   /librewolf
 
 ### C. At first, boot into your desktop environment.
 
