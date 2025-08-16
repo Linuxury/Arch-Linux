@@ -47,7 +47,7 @@ During this process, you will select your Mirror location, repositories, hostnam
 
 > After selecting your local `Mirror`, select `Multilib` from repositories for 32-bit libraries.
 
-> For Additional Packages you could search by typing " **/&#32;**". /wget   /librewolf
+> For Additional Packages you could search by typing " **/&#32;**". `/wget`    `/librewolf`
 
 ### C. At first, boot into your desktop environment.
 
@@ -246,11 +246,16 @@ On your terminal, run the following command
 
 ```javascript
 # Enable UFW
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
 sudo ufw enable
 ```
 
-Then run the following command
-
+Then run the following command [optional]
+>If you use `Steam`, add the following to enable features from `SteamOS` through your network.
 ```javascript
 # Allow specified ports and services
 sudo ufw allow 53/tcp
@@ -390,6 +395,8 @@ sudo nvim /etc/sddm.conf.d/kde_settings.conf
 Now, all you need to do is look for `[General]` and add a new line to that group with
 
 `Numlock=on`
+> For this to work, you need to have selected a theme beforehand.
+
 
 After the changes, it should look something similar to this:
 <img width="1118" height="670" alt="image" src="https://github.com/user-attachments/assets/f58c0688-6301-46f2-ba5d-57c25ba3406d" />
