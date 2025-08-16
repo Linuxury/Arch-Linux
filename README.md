@@ -47,7 +47,7 @@ During this process, you will select your Mirror location, repositories, hostnam
 
 > After selecting your local `Mirror`, select `Multilib` from repositories for 32-bit libraries.
 
-> For Additional Packages you could search by typing " **/&#32;**".
+> For Additional Packages you could search by typing " **/&#32;**". /wget /librewolf
 
 ### C. At first, boot into your desktop environment.
 
@@ -166,7 +166,7 @@ sudo cat /boot/grub/grub.cfg | grep ucode
 > Perform a Reboot and run in a terminal for Essential tools
 
 ```javascript
-sudo pacman -S curl wget zip unzip nano vim net-tools dnsutils firefox --needed
+sudo pacman -S curl wget zip unzip nano vim net-tools dnsutils librewolf --needed
 ```
 
 > Next, it's optional but highly recommended
@@ -198,7 +198,7 @@ Now that the back-end is taken care of, we can concentrate on installing a few o
 > I have them in one command, but you get the idea and could just run them individually or not at all, your choice.
 
 ```javascript
-paru -Syyu bluez bluez-utils fastfetch fish ghostty gamemode gnome-disk-utility kvantum kwalletmanager kconnect legacy-launcher networkmanager nerd-fonts mesa-git mangohud openrgb onlyoffice-bin pamac-aur pacman-contrib power-profiles-daemon proton-ge-custom-bin protonplus reflector rsync starship thunderbird timeshift steam ufw kdotool glfw glfw-wayland-minecraft-cursorfix loupe topgrade --needed
+paru -Syyu bluez bluez-utils fastfetch fish ghostty gamemode gnome-disk-utility kvantum kwalletmanager kconnect legacy-launcher networkmanager nerd-fonts mesa-git mangohud openrgb onlyoffice-bin pamac-aur pacman-contrib power-profiles-daemon proton-ge-custom-bin protonplus reflector rsync starship thunderbird timeshift steam ufw kdotool glfw glfw-wayland-minecraft-cursorfix loupe topgrade yay plasma6-themes-layan-git plasma6-wallpapers-wallpaper-engine-git plasma6-applets-arch-update-notifier librewolf-extension-plasma-integration heroic-games-launcher-bin librewolf --needed
 ```
 
 ### E. Enable Trim for your SSD
