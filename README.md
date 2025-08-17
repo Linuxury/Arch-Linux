@@ -292,8 +292,8 @@ Open a Terminal
 
 Navigate to the desired directory where they want to store the dotfiles, e.g., `~/Documents/GitRepos`
 
-`mkdir -p ~/Documents/GitRepos </br>
-cd ~/Documents/GitRepos`
+`mkdir -p ~/Documents/GitRepos` <br/>
+`cd ~/Documents/GitRepos`
 
 Clone the repository using the provided URL:
 
@@ -304,17 +304,17 @@ Clone the repository using the provided URL:
 
 - After cloning, they should navigate to the cloned `dotfiles` directory:
 
-`cd dotfiles`
+cd dotfiles
 
 - They can then create symlinks for the dotfiles as described earlier. Here’s a quick summary of the commands they would need to run:
 
-`# Create symlinks for each application`<br />
-    `ln -s ~/Documents/GitRepos/dotfiles/MangoHud ~/.config`<br />
-    `ln -s ~/Documents/GitRepos/dotfiles/Kvantum ~/.config`<br />
-    `ln -s ~/Documents/GitRepos/dotfiles/fish ~/.config`<br />
-    `ln -s ~/Documents/GitRepos/dotfiles/fastfetch ~/.config`<br />
-    `ln -s ~/Documents/GitRepos/dotfiles/ghostty ~/.config`<br />
-    `ln -s ~/Documents/GitRepos/dotfiles/starship ~/.config`<br />
+- Create symlinks for each application <br />
+ln -s ~/Documents/GitRepos/dotfiles/MangoHud ~/.config <br />
+ln -s ~/Documents/GitRepos/dotfiles/Kvantum ~/.config <br />
+ln -s ~/Documents/GitRepos/dotfiles/fish ~/.config <br />
+ln -s ~/Documents/GitRepos/dotfiles/fastfetch ~/.config <br />
+ln -s ~/Documents/GitRepos/dotfiles/ghostty ~/.config <br />
+ln -s ~/Documents/GitRepos/dotfiles/starship ~/.config <br />
     
 ```javascript
 mkdir -p ~/Documents/GitRepos
@@ -358,11 +358,6 @@ By default, `GRUB` displays a couple of useful options with a timer added to the
 ```javascript
 sudo nano /etc/default/grub
 ```
-or
-```javascript
-sudo nvim /etc/default/grub
-```
-
 Look for the following: 
 - `GRUB_TIMEOUT=5` and change it to `0`
 - `GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet"` and change it to `"loglevel=0 quiet splash"`
