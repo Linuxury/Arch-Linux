@@ -292,42 +292,42 @@ Open a Terminal
 
 Navigate to the desired directory where they want to store the dotfiles, e.g., `~/Documents/GitRepos`
 
-```javascript
-mkdir -p ~/Documents/GitRepos
-cd ~/Documents/GitRepos
-```
+`mkdir -p ~/Documents/GitRepos </br>
+cd ~/Documents/GitRepos`
 
 Clone the repository using the provided URL:
 
-```javascript
-git clone https://github.com/linuxury/dotfiles.git
-```
+`git clone https://github.com/linuxury/dotfiles.git`
 
-Or, if using SSH:
-
-```javascript
-git clone git@github.com:linuxury/dotfiles.git
-```
 
 **Setting Up Symlinks**:
 
 - After cloning, they should navigate to the cloned `dotfiles` directory:
 
-```javascript
-cd dotfiles
-```
+`cd dotfiles`
 
 - They can then create symlinks for the dotfiles as described earlier. Here’s a quick summary of the commands they would need to run:
 
+`# Create symlinks for each application`<br />
+    `ln -s ~/Documents/GitRepos/dotfiles/MangoHud ~/.config`<br />
+    `ln -s ~/Documents/GitRepos/dotfiles/Kvantum ~/.config`<br />
+    `ln -s ~/Documents/GitRepos/dotfiles/fish ~/.config`<br />
+    `ln -s ~/Documents/GitRepos/dotfiles/fastfetch ~/.config`<br />
+    `ln -s ~/Documents/GitRepos/dotfiles/ghostty ~/.config`<br />
+    `ln -s ~/Documents/GitRepos/dotfiles/starship ~/.config`<br />
+    
 ```javascript
-# Create symlinks for each application
-    ln -s ~/Documents/GitRepos/dotfiles/MangoHud ~/.config
-    ln -s ~/Documents/GitRepos/dotfiles/Kvantum ~/.config
-    ln -s ~/Documents/GitRepos/dotfiles/fish ~/.config
-    ln -s ~/Documents/GitRepos/dotfiles/fastfetch ~/.config
-    ln -s ~/Documents/GitRepos/dotfiles/ghostty ~/.config
-    ln -s ~/Documents/GitRepos/dotfiles/starship ~/.config
-```
+mkdir -p ~/Documents/GitRepos
+cd ~/Documents/GitRepos
+git clone https://github.com/linuxury/dotfiles.git
+cd dotfiles
+ln -s ~/Documents/GitRepos/dotfiles/MangoHud ~/.config
+ln -s ~/Documents/GitRepos/dotfiles/Kvantum ~/.config
+ln -s ~/Documents/GitRepos/dotfiles/fish ~/.config
+ln -s ~/Documents/GitRepos/dotfiles/fastfetch ~/.config
+ln -s ~/Documents/GitRepos/dotfiles/ghostty ~/.config
+ln -s ~/Documents/GitRepos/dotfiles/starship ~/.config
+```    
 <img width="1118" height="670" alt="image" src="https://github.com/user-attachments/assets/d5646ff0-a03e-48ce-8193-8f25294f2209" />
 
 ### J. Steam Launch Options
@@ -369,8 +369,10 @@ Look for the following:
 - `GRUB_TIMEOUT_STYLE=menu` and change it to `hidden`
 
 Add this below the `GRUB_TIMEOUT_STYLE` line
-- `GRUB_HIDDEN_TIMEOUT=0`
-- `GRUB_HIDDEN_TIMEOUT_QUIET=true`
+```javascript
+GRUB_HIDDEN_TIMEOUT=0
+GRUB_HIDDEN_TIMEOUT_QUIET=true
+  ```
 
 After all changes, it should look something similar to this:
 <img width="1116" height="674" alt="image" src="https://github.com/user-attachments/assets/bf3ecc61-4578-4576-8bfc-9e5702b3114d" />
@@ -387,19 +389,28 @@ By default, `SDDM` will have this feature off, so let's change it
 ```javascript
 sudo nano /etc/sddm.conf.d/kde_settings.conf
 ```
-or
-```javascript
-sudo nvim /etc/sddm.conf.d/kde_settings.conf
-```
 
 Now, all you need to do is look for `[General]` and add a new line to that group with
 
 `Numlock=on`
-> For this to work, you need to have selected a theme beforehand.
+```javascript
+[Autologin]
+Relogin=false
+Session=
+User=
 
+[General]
+HaltCommand=/usr/bin/systemctl poweroff
+RebootCommand=/usr/bin/systemctl reboot
+Numlock=on
 
-After the changes, it should look something similar to this:
-<img width="1118" height="670" alt="image" src="https://github.com/user-attachments/assets/f58c0688-6301-46f2-ba5d-57c25ba3406d" />
+[Theme]
+Current=breeze
+
+[Users]
+MaximumUid=60513
+MinimumUid=1000
+```
 
 ### M. Add Fish to /etc/shells [optional]
 Ensure the Fish shell's path is listed in /etc/shells. If it's not present, add it by running: 
