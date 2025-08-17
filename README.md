@@ -184,6 +184,9 @@ sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg
 ```
 Then, we append (adding at the end) the following to /etc/pacman.conf:
 ```javascript
+sudo nano /etc/pacman.conf
+```
+```javascript
 [chaotic-aur]
 Include = /etc/pacman.d/chaotic-mirrorlist
 ```
