@@ -385,6 +385,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 By default, `SDDM` will have this feature off, so let's change it
 
 ```javascript
+sudo mkdir -p /etc/sddm.conf.d
 sudo nano /etc/sddm.conf.d/kde_settings.conf
 ```
 
