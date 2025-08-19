@@ -1,4 +1,4 @@
-# Setting up Arch Linux during a clean install.
+# Setting up Arch Linux with KDE (For Gaming).
 
 ### A. What to do before running the Arch-install script.
 
