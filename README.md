@@ -201,7 +201,7 @@ Now that the back-end is taken care of, we can concentrate on installing a few o
 > I have them in one command, but you get the idea and could just run them individually or not at all, your choice.
 
 ```javascript
-paru -Syyu bluez bluez-utils fastfetch fish ghostty gamemode gnome-disk-utility kvantum kwalletmanager kconnect legacy-launcher networkmanager nerd-fonts mangohud openrgb onlyoffice-bin pamac-aur pacman-contrib power-profiles-daemon proton-ge-custom-bin protonplus reflector rsync starship thunderbird timeshift steam ufw kdotool glfw-wayland-minecraft-cursorfix loupe topgrade paru yay plasma6-themes-layan-git tela-icon-theme-git breezex-cursor-theme plasma6-wallpapers-wallpaper-engine-git plasma6-applets-arch-update-notifier heroic-games-launcher-bin firefox jre21-openjdk jre22-openjdk jre23-openjdk flatpak sgdboop-bin lsfg-vk-git lutris-git vvave showtime --needed
+paru -Syyu bluez bluez-utils fastfetch fish ghostty gamemode gnome-disk-utility kvantum kwalletmanager kconnect kdeconnect legacy-launcher networkmanager nerd-fonts mangohud openrgb onlyoffice-bin pamac-aur pacman-contrib power-profiles-daemon proton-ge-custom-bin protonplus reflector rsync starship thunderbird timeshift steam ufw kdotool glfw-wayland-minecraft-cursorfix loupe topgrade paru yay plasma6-themes-layan-git tela-icon-theme-git breezex-cursor-theme plasma6-wallpapers-wallpaper-engine-git plasma6-applets-arch-update-notifier heroic-games-launcher-bin firefox jre21-openjdk jre22-openjdk jre23-openjdk flatpak sgdboop-bin lsfg-vk-git lutris-git vvave showtime --needed
 ```
 Enable Flatpak
 ```javascript
