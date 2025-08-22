@@ -437,7 +437,7 @@ To enable global menu support, run the command and restart the app.
 ```javascript
 sudo pacman -S appmenu-gtk-module libdbusmenu-glib
 ```
-### M. Arch Update Counter Popup Color Layan [optional]
+### O. Arch Update Counter Popup Color Layan [optional]
 
 Name: White (#D8DEE9) <br/>
 Source: Teal (#88C0D0) <br/>
