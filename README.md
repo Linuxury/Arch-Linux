@@ -32,7 +32,7 @@ Now, let's run a benchmark and select the fastest mirrors for pacman to use. [op
 > Paste the following command into the terminal:
 
 ```javascript
-sudo reflector --country 'United States' --sort rate --latest 10 --save /etc/pacman.d/mirrorlist
+sudo reflector --country 'United States' --latest 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist
 reflector --verbose
 ```
 ### B. Arch-install
