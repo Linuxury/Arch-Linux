@@ -320,6 +320,7 @@ ln -s ~/Documents/GitRepos/dotfiles/Kvantum ~/.config <br />
 ln -s ~/Documents/GitRepos/dotfiles/fish ~/.config <br />
 ln -s ~/Documents/GitRepos/dotfiles/fastfetch ~/.config <br />
 ln -s ~/Documents/GitRepos/dotfiles/ghostty ~/.config <br />
+ln -s ~/Documents/GitRepos/dotfiles/bazaar-config ~/.config <br />
 ln -s ~/Documents/GitRepos/dotfiles/starship ~/.config <br />
     
 ```javascript
