@@ -448,3 +448,14 @@ Separator: Green (#A3BE8C) <br/>
 To Version: Bright white (#ECEFF4) <br/> <br/>
 <img width="510" height="398" alt="image" src="https://github.com/user-attachments/assets/acb87e0c-409c-4aca-aeee-9d4e545f4dc5" />
 
+### P. Bazaar (FLATPAK Store) [optional]
+
+Run this in Terminal for installation
+```javascript
+flatpak install flathub io.github.kolunmi.Bazaar
+```
+
+Run This for custom config
+```javascript
+flatpak run io.github.kolunmi.Bazaar --extra-content-config=~/.config/bazaar-config/config.yaml
+```
