@@ -321,6 +321,7 @@ ln -s ~/Documents/GitRepos/dotfiles/fish ~/.config <br />
 ln -s ~/Documents/GitRepos/dotfiles/fastfetch ~/.config <br />
 ln -s ~/Documents/GitRepos/dotfiles/ghostty ~/.config <br />
 ln -s ~/Documents/GitRepos/dotfiles/bazaar-config ~/.config <br />
+ln -s ~/Documents/GitRepos/dotfiles/helix ~/.config <br />
 ln -s ~/Documents/GitRepos/dotfiles/starship ~/.config <br />
     
 ```javascript
@@ -334,6 +335,7 @@ ln -s ~/Documents/GitRepos/dotfiles/fish ~/.config
 ln -s ~/Documents/GitRepos/dotfiles/fastfetch ~/.config
 ln -s ~/Documents/GitRepos/dotfiles/ghostty ~/.config
 ln -s ~/Documents/GitRepos/dotfiles/bazaar-config ~/.config
+ln -s ~/Documents/GitRepos/dotfiles/helix ~/.config
 ln -s ~/Documents/GitRepos/dotfiles/starship ~/.config
 ```    
 <img width="1118" height="670" alt="image" src="https://github.com/user-attachments/assets/d5646ff0-a03e-48ce-8193-8f25294f2209" />
