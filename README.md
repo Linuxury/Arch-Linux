@@ -298,7 +298,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
 
 3. **Install core packages**:
    - Use `\` for line continuation to improve readability.
-  <br />
+     <br />  <br />
    ```bash
    paru -S bluez bluez-utils fastfetch fish ghostty gnome-disk-utility kvantum kwalletmanager \
            kdeconnect legacy-launcher networkmanager nerd-fonts mangohud openrgb onlyoffice-bin \
@@ -431,8 +431,9 @@ Customize tools and shells with dotfiles.
    > **Warning**: Verify repository (`curl -I https://github.com/linuxury/dotfiles`).
 
 2. **Create symlinks**:
-   - Back up existing configurations:
-   <br />
+   - Back up existing configurations:<br />
+
+   
    ```bash
    mv ~/.config/MangoHud ~/.config/MangoHud.bak 2>/dev/null
    mv ~/.config/Kvantum ~/.config/Kvantum.bak 2>/dev/null
@@ -443,8 +444,9 @@ Customize tools and shells with dotfiles.
    mv ~/.config/helix ~/.config/helix.bak 2>/dev/null
    mv ~/.config/starship ~/.config/starship.bak 2>/dev/null
    ```
-   - Create symlinks:
-   <br />  
+   - Create symlinks:<br />
+
+
    ```bash
    ln -s ~/Documents/GitRepos/dotfiles/MangoHud ~/.config
    ln -s ~/Documents/GitRepos/dotfiles/Kvantum ~/.config
@@ -475,7 +477,7 @@ Configure Steam with `proton-ge-custom` for optimal performance.
 
 2. **Set Steam launch options**:
    - Right-click a game in Steam, select `Properties`, add to `Launch Options`:
-   <br />
+
    ```plaintext
    PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 SteamDeck=1 PROTON_FSR4_UPGRADE=1 PROTON_DLSS_UPGRADE=1 gamemoderun mangohud %command%
    ```
@@ -500,7 +502,7 @@ Configure Steam with `proton-ge-custom` for optimal performance.
 
 3. **Verify ProtonPlus**:
    - Ensure `proton-ge-custom` is installed:
-   <br />
+
    ```bash
    ls ~/.local/share/Steam/compatibilitytools.d  # Should list Proton-GE-Custom
    ```
@@ -517,8 +519,7 @@ Enhance KDE Plasma with tweaks.
 
 ### Steps
 1. **Configure SDDM (login screen)**:
-   - **Minimal setup**: Enable Num Lock and set the Breeze theme for a clean login screen.
-   <br />
+   - **Minimal setup**: Enable Num Lock and set Breeze theme for a clean login screen.
    ```bash
    sudo mkdir -p /etc/sddm.conf.d
    sudo nano /etc/sddm.conf.d/kde_settings.conf
@@ -531,8 +532,7 @@ Enhance KDE Plasma with tweaks.
    [Theme]
    Current=breeze
    ```
-   - **Custom setup (recommended for your setup)**: Include Num Lock, power commands, and Breeze theme. <br />
-   
+   - **Custom setup (recommended for your setup)**: Include Num Lock, power commands, and Breeze theme.
    ```bash
    sudo nano /etc/sddm.conf.d/kde_settings.conf
    ```
@@ -554,7 +554,7 @@ Enhance KDE Plasma with tweaks.
    cat /etc/sddm.conf.d/kde_settings.conf  # Check configuration
    ls /usr/share/sddm/themes/breeze  # Confirm Breeze theme exists
    ```
-   > **Tip**: Reboot to test the login screen. If the Breeze theme doesn’t load, ensure `sddm` and `plasma-desktop` are installed (`sudo pacman -S sddm plasma-desktop`).
+   > **Tip**: Reboot to test the login screen. If Breeze theme doesn’t load, ensure `sddm` and `plasma-desktop` are installed (`sudo pacman -S sddm plasma-desktop`).
 
 2. **Set Fish as default shell**:
    ```bash
