@@ -277,6 +277,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
 
 ### Steps
 1. **Install Chaotic-AUR**:
+
    ```bash
    sudo pacman-key --recv-key 3056513887B78AEB --keyserver hkp://pool.sks-keyservers.net
    sudo pacman-key --lsign-key 3056513887B78AEB
@@ -295,8 +296,9 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
    ```
    > **Warning**: Chaotic-AUR is third-party. Review PKGBUILDs (`paru -Si <package>`) for safety.
 
-2. **Install core packages**:
+3. **Install core packages**:
    - Use `\` for line continuation to improve readability.
+  
    ```bash
    paru -S bluez bluez-utils fastfetch fish ghostty gnome-disk-utility kvantum kwalletmanager \
            kdeconnect legacy-launcher networkmanager nerd-fonts mangohud openrgb onlyoffice-bin \
@@ -314,7 +316,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
    ```
    > **Note**: The backslash (`\`) splits long commands for readability without affecting execution. Multiple Java versions may cause conflicts; consider only `jre-openjdk`. Review AUR PKGBUILDs.
 
-3. **Enable Flatpak**:
+4. **Enable Flatpak**:
    ```bash
    sudo pacman -S flatpak
    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -324,7 +326,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
    flatpak remote-list  # Should show flathub
    ```
 
-4. **Install Bazaar**:
+5. **Install Bazaar**:
    ```bash
    flatpak install flathub io.github.kolunmi.Bazaar
    ```
