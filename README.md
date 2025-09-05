@@ -165,7 +165,7 @@ sudo cat /boot/grub/grub.cfg | grep ucode
 > Perform a Reboot and run in a terminal for Essential tools
 
 ```javascript
-sudo pacman -S curl wget zip unzip nano vim net-tools dnsutils firefox --needed
+sudo pacman -S curl wget zip unzip nano net-tools dnsutils firefox --needed
 ```
 
 > Next, it's optional but highly recommended
