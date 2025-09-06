@@ -162,7 +162,7 @@ Configure tools and services in KDE Plasma.
 ### Steps
 1. **Install bash completion**:
    ```bash
-   sudo pacman -S bash-completion
+   sudo pacman -S bash-completion --needed
    nano ~/.bashrc
    ```
    Add:
@@ -188,6 +188,7 @@ Configure tools and services in KDE Plasma.
    ```
    For `yay`:
    ```bash
+   sudo pacman -S git base-devel --needed
    git clone https://aur.archlinux.org/yay.git
    cd yay
    makepkg -si --needed
@@ -226,15 +227,15 @@ Configure tools and services in KDE Plasma.
    ```
    For NVIDIA:
    ```bash
-   sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils
+   sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils --needed
    ```
    For AMD:
    ```bash
-   sudo pacman -S mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon
+   sudo pacman -S mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon --needed
    ```
    For Intel:
    ```bash
-   sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel
+   sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel --needed
    ```
    Verify:
    ```bash
