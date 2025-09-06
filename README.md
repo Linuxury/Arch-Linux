@@ -431,7 +431,7 @@ Customize tools and shells with dotfiles.
    > **Warning**: Verify repository (`curl -I https://github.com/linuxury/dotfiles`).
 
 2. **Create symlinks**:
-   - Back up existing configurations:<br />
+   - Back up existing configurations:<br /><br/>
 
    
    ```bash
@@ -444,7 +444,7 @@ Customize tools and shells with dotfiles.
    mv ~/.config/helix ~/.config/helix.bak 2>/dev/null
    mv ~/.config/starship ~/.config/starship.bak 2>/dev/null
    ```
-   - Create symlinks:<br />
+   - Create symlinks:<br /><br/>
 
 
    ```bash
@@ -476,7 +476,7 @@ Configure Steam with `proton-ge-custom` for optimal performance.
    - For Lutris, set `proton-ge-custom` as the runner for games (configured in Lutris GUI).
 
 2. **Set Steam launch options**:
-   - Right-click a game in Steam, select `Properties`, add to `Launch Options`:
+   - Right-click a game in Steam, select `Properties`, add to `Launch Options`:<br/><br/>
 
    ```plaintext
    PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 SteamDeck=1 PROTON_FSR4_UPGRADE=1 PROTON_DLSS_UPGRADE=1 gamemoderun mangohud %command%
@@ -501,7 +501,7 @@ Configure Steam with `proton-ge-custom` for optimal performance.
    > **Warning**: Experimental flags (`PROTON_FSR4_UPGRADE`, `PROTON_DLSS_UPGRADE`) may cause instability. Test games without them if issues arise.
 
 3. **Verify ProtonPlus**:
-   - Ensure `proton-ge-custom` is installed:
+   - Ensure `proton-ge-custom` is installed:<br/><br/>
 
    ```bash
    ls ~/.local/share/Steam/compatibilitytools.d  # Should list Proton-GE-Custom
@@ -519,7 +519,7 @@ Enhance KDE Plasma with tweaks.
 
 ### Steps
 1. **Configure SDDM (login screen)**:
-   - **Minimal setup**: Enable Num Lock and set Breeze theme for a clean login screen.
+   - **Minimal setup**: Enable Num Lock and set Breeze theme for a clean login screen.<br/><br/>
    ```bash
    sudo mkdir -p /etc/sddm.conf.d
    sudo nano /etc/sddm.conf.d/kde_settings.conf
@@ -532,7 +532,7 @@ Enhance KDE Plasma with tweaks.
    [Theme]
    Current=breeze
    ```
-   - **Custom setup (recommended for your setup)**: Include Num Lock, power commands, and Breeze theme.
+   - **Custom setup (recommended for your setup)**: Include Num Lock, power commands, and Breeze theme.<br/><br/>
    ```bash
    sudo nano /etc/sddm.conf.d/kde_settings.conf
    ```
@@ -596,18 +596,37 @@ Enhance KDE Plasma with tweaks.
    ```
    > **Warning**: `GRUB_TIMEOUT=0` and `loglevel=0` make boot fast and silent but may hide errors and make GRUB menu access difficult (use `Shift` or `Esc` during boot).
    
-   After all changes, it should look something similar to this:
+   After all changes, it should look something similar to this:<br/><br/>
    <img width="1116" height="674" alt="image" src="https://github.com/user-attachments/assets/bf3ecc61-4578-4576-8bfc-9e5702b3114d" />
 
 
-5. **Arch Update Counter Popup Color Layan [optional]**
+5. **Arch Update Counter configuration**:
+    - General:
+        - **Change the option for update to**: `5 minute(s)` <br/>
+        - **Select the option for**: `Retry if error` <br/> <br/>
+          <img width="497" height="152" alt="image" src="https://github.com/user-attachments/assets/fd6b9773-4950-4ad4-9da1-d21b28ac6b79" />
 
-   Name: White (#D8DEE9) <br/>
-   Source: Teal (#88C0D0) <br/>
-   From Version: Gray (#4C566A) <br/>
-   Separator: Green (#A3BE8C) <br/>
-   To Version: Bright white (#ECEFF4) <br/> <br/>
-   <img width="510" height="398" alt="image" src="https://github.com/user-attachments/assets/acb87e0c-409c-4aca-aeee-9d4e545f4dc5" />
+    - Search & Count:
+        - **Count ARCH command**: `checkupdates | wc -l` <br/>
+        - **Count AUR command**: `paru -Qua | wc -l` <br/>
+        - **List ARCH command**: `checkupdates` <br/>
+        - **List AUR command**:  `paru -Qua` <br/> <br/>
+          <img width="559" height="374" alt="image" src="https://github.com/user-attachments/assets/879a49ec-2ca4-4d17-a4d3-ca5dbaa6d1f8" />
+
+    - Update Package:
+        - **Update command**: `topgrade` <br/>
+        - **Update one command**: `paru -Sy` <br/>
+        - **Terminal cmd for update action**: `ghostty -e` <br/>
+        - **Terminal cmd for update with do not close**: `ghostty --noclose -e` <br/> <br/>
+          <img width="559" height="466" alt="image" src="https://github.com/user-attachments/assets/a681a468-0fe1-4017-80f3-99a1764546dc" />
+
+    - Change Popup color:<br/>
+        - **Name**: White `#D8DEE9` <br/>
+        - **Source**: Teal `#88C0D0` <br/>
+        - **From Version**: Gray `#4C566A` <br/>
+        - **Separator**: Green `#A3BE8C` <br/>
+        - **To Version**: Bright white `#ECEFF4` <br/> <br/>
+          <img width="510" height="398" alt="image" src="https://github.com/user-attachments/assets/acb87e0c-409c-4aca-aeee-9d4e545f4dc5" />
 
 
 ## I. Troubleshooting Tips
