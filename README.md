@@ -188,6 +188,7 @@ Configure tools and services in KDE Plasma.
    ```
    > **In case this doesn't work due to AUR being down, use this as a backup.**
    ```bash
+   sudo pacman -S git base-devel --needed
    git clone https://aur.archlinux.org/paru-bin.git
    cd paru-bin
    makepkg -si --needed
