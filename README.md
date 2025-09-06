@@ -293,19 +293,22 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
 3. **Install core packages**:
 
    ```bash
-   paru -S bluez bluez-utils fastfetch fish ghostty gnome-disk-utility kvantum kwalletmanager \
-           kdeconnect legacy-launcher networkmanager nerd-fonts mangohud openrgb onlyoffice-bin \
-           pamac-aur pacman-contrib power-profiles-daemon proton-ge-custom protonplus protontricks \
-           reflector rsync starship thunderbird timeshift ufw kdotool loupe topgrade \
-           plasma6-themes-layan-git tela-icon-theme-git breezex-cursor-theme \
-           plasma6-wallpapers-wallpaper-engine-git plasma6-applets-arch-update-notifier \
-           heroic-games-launcher-bin firefox jre21-openjdk jre22-openjdk jre23-openjdk flatpak \
-           sgdboop-bin lsfg-vk-git vvave okular showtime fluent-reader-bin alsa-plugins giflib \
-           glfw gst-plugins-base-libs libjpeg-turbo libva libxslt mpg123 openal opencl-icd-loader \
-           ttf-liberation vulkan-tools winetricks wine gamemode gamescope lutris steam \
-           lib32-alsa-plugins lib32-giflib lib32-gst-plugins-base-libs lib32-gtk3 \
-           lib32-libjpeg-turbo lib32-libva lib32-mpg123 lib32-ocl-icd lib32-opencl-icd-loader \
-           lib32-openal webapp-manager chromium pdfarranger phonon-qt6-gstreamer-git --needed
+   paru -S bluez bluez-utils fastfetch fish ghostty gnome-disk-utility kvantum \
+           kwalletmanager kdeconnect legacy-launcher networkmanager nerd-fonts \
+           mangohud openrgb onlyoffice-bin pamac-aur pacman-contrib \
+           power-profiles-daemon proton-ge-custom protonplus protontricks \
+           reflector rsync starship thunderbird timeshift ufw kdotool loupe \
+           topgrade plasma6-themes-layan-git tela-icon-theme-git \
+           breezex-cursor-theme plasma6-applets-arch-update-notifier \
+           heroic-games-launcher-bin firefox jre21-openjdk jre22-openjdk \
+           jre23-openjdk flatpak sgdboop-bin lsfg-vk-git vvave okular showtime \
+           fluent-reader-bin alsa-plugins giflib glfw gst-plugins-base-libs \
+           libjpeg-turbo libva libxslt mpg123 openal opencl-icd-loader \
+           ttf-liberation vulkan-tools winetricks wine gamemode gamescope lutris \
+           steam lib32-alsa-plugins lib32-giflib lib32-gst-plugins-base-libs \
+           lib32-gtk3 lib32-libjpeg-turbo lib32-libva lib32-mpg123 lib32-ocl-icd \
+           lib32-opencl-icd-loader lib32-openal webapp-manager chromium \
+           pdfarranger phonon-qt6-gstreamer-git mission-center --needed
    ```
    > **Note**: The backslash `\` splits long commands for readability without affecting execution. Multiple Java versions may cause conflicts; consider only `jre-openjdk` (In my case I need multiple versions for Minecraft. Review AUR PKGBUILDs.
 
