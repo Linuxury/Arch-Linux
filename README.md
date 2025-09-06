@@ -421,7 +421,7 @@ Customize tools and shells with dotfiles.
    > **Warning**: Verify repository `curl -I https://github.com/linuxury/dotfiles`.
 
 2. **Create symlinks**:
-   - Back up existing configurations:<br /><br/>
+   - Back up existing configurations [optional]:<br /><br/>
 
    
    ```bash
