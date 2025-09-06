@@ -297,7 +297,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
            kdeconnect legacy-launcher networkmanager nerd-fonts mangohud openrgb onlyoffice-bin \
            pamac-aur pacman-contrib power-profiles-daemon proton-ge-custom protonplus protontricks \
            reflector rsync starship thunderbird timeshift ufw kdotool loupe topgrade \
-           plasma6-themes-layan-git tela-icon-theme-git breezex-cursor-theme \
+           phonon-qt6-gstreamer-git plasma6-themes-layan-git tela-icon-theme-git breezex-cursor-theme \
            plasma6-wallpapers-wallpaper-engine-git plasma6-applets-arch-update-notifier \
            heroic-games-launcher-bin firefox jre21-openjdk jre22-openjdk jre23-openjdk flatpak \
            sgdboop-bin lsfg-vk-git vvave okular showtime fluent-reader-bin alsa-plugins giflib \
