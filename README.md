@@ -186,6 +186,15 @@ Configure tools and services in KDE Plasma.
    pwd  # Verify directory
    rm -rf paru
    ```
+   > **In case this doesn't work due to AUR being down, use this as a backup.**
+   ```bash
+   git clone https://aur.archlinux.org/paru-bin.git
+   cd paru-bin
+   makepkg -si --needed
+   cd ..
+   rm -rf paru-bin
+   paru --version
+   ```
    For `yay`:
    ```bash
    sudo pacman -S git base-devel --needed
