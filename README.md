@@ -6,7 +6,7 @@ This guide configures a fresh Arch Linux installation with KDE Plasma, optimized
 
 ## A. Pre-Installation Configuration
 
-Configure the package manager (`pacman`) for performance and usability.
+Configure the package manager `pacman` for performance and usability.
 
 ### Why?
 - Colors and verbose lists improve readability.
@@ -29,7 +29,7 @@ Configure the package manager (`pacman`) for performance and usability.
    ParallelDownloads = 8  # Replace with `nproc` output
    ILoveCandy
    ```
-   Save (`Ctrl+O`, `Enter`, `Ctrl+X`).
+   Save `Ctrl+O`, `Enter`, `Ctrl+X`.
 
 2. **Optimize mirrors**:
    - Use `reflector` to select fast mirrors for your region.<br /><br />
@@ -38,7 +38,7 @@ Configure the package manager (`pacman`) for performance and usability.
    sudo pacman -S reflector
    sudo reflector --country 'United States' --latest 20 --sort rate --save /etc/pacman.d/mirrorlist
    ```
-   > **Note**: Replace `--country 'United States'` with your country (e.g., `--country 'Germany,France'`) or omit for all mirrors.
+   > **Note**: Replace `--country 'United States'` with your country e.g., `--country 'Germany,France'` or omit for all mirrors.
 
 3. **Verify**:
    ```bash
@@ -48,7 +48,7 @@ Configure the package manager (`pacman`) for performance and usability.
 
 ## B. Run the Archinstall Script
 
-The `archinstall` script simplifies installation, setting up KDE Plasma for gaming.
+The `archinstall` script simplifies the installation process, setting up KDE Plasma for gaming.
 
 ### Why?
 - Automates installation for beginners.
@@ -64,7 +64,7 @@ Navigate with arrow keys, `Enter` to select, `Space` to toggle.
 
 #### 1. Select Mirrors
 - **Purpose**: Choose servers for fast package downloads.
-- **Action**: Select your region (e.g., `United States`) or `Global`.
+- **Action**: Select your region e.g., `United States` or `Global`.
 - **Why for Gaming?**: Speeds up installation.
 - **Tip**: Keep the default if `reflector` was used.
 
@@ -72,12 +72,12 @@ Navigate with arrow keys, `Enter` to select, `Space` to toggle.
 - **Purpose**: Partitions the drive.
 - **Action**: Choose `Auto-partition` (EFI, root, 4–8 GB swap, `ext4` filesystem).
 - **Why for Gaming?**: Swap handles memory-heavy games; `ext4` is stable.
-- **Tip**: Back up data; check SSD (`lsblk -d -o NAME,ROTA`, ROTA=0).
+- **Tip**: Back up data; check SSD `lsblk -d -o NAME,ROTA`, ROTA=0.
 
 #### 3. Profile
 - **Purpose**: Selects desktop environment.
 - **Action**: Choose `desktop` > `plasma`.
-- **Why for Gaming?**: KDE Plasma supports Wayland, HDR.
+- **Why for Gaming?**: KDE Plasma supports Wayland and HDR.
 - **Tip**: Avoid minimal profiles unless advanced.
 
 #### 4. Audio
@@ -95,36 +95,30 @@ Navigate with arrow keys, `Enter` to select, `Space` to toggle.
 #### 6. Network Configuration
 - **Purpose**: Sets up internet.
 - **Action**: Select `NetworkManager`.
-- **Why for Gaming?**: Stable online gaming.
-- **Tip**: Verify post-install (`ping archlinux.org`).
+- **Tip**: Verify post-install `ping archlinux.org`.
 
 #### 7. Timezone
 - **Purpose**: Sets system clock.
-- **Action**: Choose region/city (e.g., `America/New_York`).
-- **Why for Gaming?**: Syncs with game servers.
+- **Action**: Choose region/city e.g., `America/New_York`.
 - **Tip**: Use `Tab` to search.
 
 #### 8. Hostname
 - **Purpose**: Names computer.
-- **Action**: Enter name (e.g., `gaming-pc`).
-- **Why for Gaming?**: Identifies the system in multiplayer.
+- **Action**: Enter name e.g., `gaming-pc`.
 - **Tip**: Use lowercase, no special characters.
 
 #### 9. Root Password
 - **Purpose**: Sets admin password.
 - **Action**: Enter secure password.
-- **Why for Gaming?**: Secures SSH/remote access.
-- **Tip**: Store securely.
 
 #### 10. User Account
 - **Purpose**: Creates daily-use account.
-- **Action**: Add user (e.g., `gamer`), set password, enable `sudo`.
-- **Why for Gaming?**: Improves security.
+- **Action**: Add user, e.g., `gamer`, set password, enable `sudo`.
 - **Tip**: Choose simple username.
 
 #### 11. Additional Packages
 - **Purpose**: Installs extra packages.
-- **Action**: Enter `wget firefox vulkan-tools steam`.
+- **Action**: Enter `firefox vulkan-tools`.
 - **Why for Gaming?**: Sets up web access, graphics, and gaming.
 - **Tip**: Use `/` to search.
 
@@ -138,19 +132,17 @@ Navigate with arrow keys, `Enter` to select, `Space` to toggle.
 - **Purpose**: Installs bootloader.
 - **Action**: Choose `grub`.
 - **Why for Gaming?**: Supports kernel/microcode.
-- **Tip**: Verify UEFI (`ls /sys/firmware/efi`).
+- **Tip**: Verify UEFI `ls /sys/firmware/efi`.
 
 #### 14. Install
 - **Purpose**: Starts installation.
 - **Action**: Review choices, select `Install`.
-- **Why for Gaming?**: Sets up the KDE system.
-- **Tip**: Note errors, check logs (`journalctl -b`).
+- **Tip**: Note errors, check logs `journalctl -b`.
 
 #### 15. Post-Installation
 - **Purpose**: Completes setup.
 - **Action**: Select `Reboot`.
-- **Why for Gaming?**: Boots into KDE.
-- **Tip**: Access GRUB (`Shift` or `Esc`) if boot fails.
+- **Tip**: Access GRUB `Shift` or `Esc` if boot fails.
 
 ### Verify
 ```bash
@@ -181,7 +173,7 @@ Configure tools and services in KDE Plasma.
    [ -f /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
    complete -cf sudo
    ```
-   Save (`Ctrl+O`, `Enter`, `Ctrl+X`), refresh:
+   Save `Ctrl+O`, `Enter`, `Ctrl+X`, refresh:
    ```bash
    source ~/.bashrc
    ```
@@ -209,7 +201,7 @@ Configure tools and services in KDE Plasma.
    ```bash
    paru --version  # or yay --version
    ```
-   > **Note**: If `makepkg` fails, check dependencies (`sudo pacman -S <package>`) or PKGBUILD (`less PKGBUILD`).
+   > **Note**: If `makepkg` fails, check dependencies `sudo pacman -S <package>` or PKGBUILD `less PKGBUILD`.
 
 3. **Install CPU microcode**:
    ```bash
@@ -294,11 +286,10 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
    ```bash
    sudo pacman -Syyu
    ```
-   > **Warning**: Chaotic-AUR is third-party. Review PKGBUILDs (`paru -Si <package>`) for safety.
+   > **Warning**: Chaotic-AUR is third-party. Review PKGBUILDs `paru -Si <package>` for safety.
 
 3. **Install core packages**:
-   - Use `\` for line continuation to improve readability.
-     <br />  <br />
+
    ```bash
    paru -S bluez bluez-utils fastfetch fish ghostty gnome-disk-utility kvantum kwalletmanager \
            kdeconnect legacy-launcher networkmanager nerd-fonts mangohud openrgb onlyoffice-bin \
@@ -314,7 +305,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
            lib32-libjpeg-turbo lib32-libva lib32-mpg123 lib32-ocl-icd lib32-opencl-icd-loader \
            lib32-openal webapp-manager chromium pdfarranger --needed
    ```
-   > **Note**: The backslash (`\`) splits long commands for readability without affecting execution. Multiple Java versions may cause conflicts; consider only `jre-openjdk`. Review AUR PKGBUILDs.
+   > **Note**: The backslash `\` splits long commands for readability without affecting execution. Multiple Java versions may cause conflicts; consider only `jre-openjdk` (In my case I need multiple versions for Minecraft. Review AUR PKGBUILDs.
 
 4. **Enable Flatpak**:
    ```bash
@@ -358,7 +349,7 @@ Enable services for SSD maintenance, Bluetooth, networking, and firewall.
    ```bash
    systemctl status bluetooth.service
    ```
-   > **Tip**: Use `bluez-tools` (`sudo pacman -S bluez-tools`) for pairing.
+   > **Tip**: Use `bluez-tools` `sudo pacman -S bluez-tools` for pairing.
 
 3. **Enable NetworkManager**:
    ```bash
@@ -428,7 +419,7 @@ Customize tools and shells with dotfiles.
    git clone https://github.com/linuxury/dotfiles.git
    cd dotfiles
    ```
-   > **Warning**: Verify repository (`curl -I https://github.com/linuxury/dotfiles`).
+   > **Warning**: Verify repository `curl -I https://github.com/linuxury/dotfiles`.
 
 2. **Create symlinks**:
    - Back up existing configurations:<br /><br/>
@@ -472,14 +463,14 @@ Configure Steam with `proton-ge-custom` for optimal performance.
 
 ### Steps
 1. **Set `proton-ge-custom`**:
-   - Open Steam, go to `Settings > Steam Play`, enable Steam Play for all titles, select `Proton-GE-Custom` (installed via `protonplus` in Section D).
+   - Open Steam, go to `Settings > Compatibility (Steam Play)`, enable Steam Play for all titles, select `Proton-GE`.
    - For Lutris, set `proton-ge-custom` as the runner for games (configured in Lutris GUI).
 
 2. **Set Steam launch options**:
    - Right-click a game in Steam, select `Properties`, add to `Launch Options`:<br/><br/>
 
    ```plaintext
-   PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 SteamDeck=1 PROTON_FSR4_UPGRADE=1 PROTON_DLSS_UPGRADE=1 gamemoderun mangohud %command%
+   PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 PROTON_FSR4_UPGRADE=1 gamemoderun mangohud %command%
    ```
    - **Explanation**:
      - `PROTON_ENABLE_WAYLAND=1`: Enables Wayland for scaling/HDR.
@@ -519,7 +510,7 @@ Enhance KDE Plasma with tweaks.
 
 ### Steps
 1. **Configure SDDM (login screen)**:
-   - **Minimal setup**: Enable Num Lock and set Breeze theme for a clean login screen.<br/><br/>
+   - **Minimal setup**: Enable Num Lock and set the Breeze theme for a clean login screen.<br/><br/>
    ```bash
    sudo mkdir -p /etc/sddm.conf.d
    sudo nano /etc/sddm.conf.d/kde_settings.conf
@@ -554,7 +545,7 @@ Enhance KDE Plasma with tweaks.
    cat /etc/sddm.conf.d/kde_settings.conf  # Check configuration
    ls /usr/share/sddm/themes/breeze  # Confirm Breeze theme exists
    ```
-   > **Tip**: Reboot to test the login screen. If Breeze theme doesn’t load, ensure `sddm` and `plasma-desktop` are installed (`sudo pacman -S sddm plasma-desktop`).
+   > **Tip**: Reboot to test the login screen. If the Breeze theme doesn’t load, ensure `sddm` and `plasma-desktop` are installed `sudo pacman -S sddm plasma-desktop`.
 
 2. **Set Fish as default shell**:
    ```bash
@@ -630,13 +621,13 @@ Enhance KDE Plasma with tweaks.
 
 
 ## I. Troubleshooting Tips
-- **Package fails**: Check dependencies (`sudo pacman -S <package>`) or PKGBUILD (`paru -Si <package>`).
-- **Service fails**: Check status (`systemctl status <service>`), logs (`journalctl -xe`).
-- **Gaming issues**: Verify drivers (`glxinfo | grep "OpenGL renderer"`), Proton settings.
-- **AUR errors**: Update (`paru -Syyu`), check AUR page.
-- **Chaotic-AUR issues**: Remove from `pacman.conf`, update (`sudo pacman -Syyu`).
-- **SDDM issues**: If the Breeze theme doesn’t load, reinstall `sddm` and `plasma-desktop` (`sudo pacman -S sddm plasma-desktop`).
-- **UFW issues**: If Steam features (e.g., Remote Play) fail, verify ports (`sudo ufw status`) and test incrementally.
+- **Package fails**: Check dependencies `sudo pacman -S <package>` or PKGBUILD `paru -Si <package>`.
+- **Service fails**: Check status `systemctl status <service>`, logs `journalctl -xe`.
+- **Gaming issues**: Verify drivers `glxinfo | grep "OpenGL renderer"`, Proton settings.
+- **AUR errors**: Update `paru -Syyu`, check AUR page.
+- **Chaotic-AUR issues**: Remove from `pacman.conf`, update `sudo pacman -Syyu`.
+- **SDDM issues**: If the Breeze theme doesn’t load, reinstall `sddm` and `plasma-desktop`, `sudo pacman -S sddm plasma-desktop`.
+- **UFW issues**: If Steam features (e.g., Remote Play) fail, verify ports `sudo ufw status` and test incrementally.
 
 ## Conclusion
 This guide sets up a gaming-optimized Arch Linux system with KDE Plasma, using `proton-ge-custom`, a polished Breeze login screen, and custom configurations. Commands are grouped for easy copying, with verification steps. For help, consult the [Arch Wiki](https://wiki.archlinux.org/) or forums.
