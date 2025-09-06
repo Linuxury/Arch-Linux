@@ -571,10 +571,10 @@ Enhance KDE Plasma with tweaks.
    Modify:
    ```plaintext
    GRUB_TIMEOUT=0
+   GRUB_CMDLINE_LINUX_DEFAULT="loglevel=0 quiet splash"
    GRUB_TIMEOUT_STYLE=hidden
    GRUB_HIDDEN_TIMEOUT=0
    GRUB_HIDDEN_TIMEOUT_QUIET=true
-   GRUB_CMDLINE_LINUX_DEFAULT="loglevel=0 quiet splash"
    ```
    - **Explanation**:
      - `GRUB_TIMEOUT=0`: Skips GRUB menu for fastest boot.
