@@ -65,13 +65,12 @@ Navigate with arrow keys, `Enter` to select, `Space` to toggle.
 #### 1. Select Mirrors
 - **Purpose**: Choose servers for fast package downloads.
 - **Action**: Select your region e.g., `United States` or `Global`.
-- **Why for Gaming?**: Speeds up installation.
 - **Tip**: Keep the default if `reflector` was used.
 
 #### 2. Disk Configuration
 - **Purpose**: Partitions the drive.
-- **Action**: Choose `Auto-partition` (EFI, root, 4–8 GB swap, `ext4` filesystem).
-- **Why for Gaming?**: Swap handles memory-heavy games; `ext4` is stable.
+- **Action**: Choose `Auto-partition` (EFI, root, 4–8 GB swap, `ext4` or `btrfs` filesystem).
+- **Why for Gaming?**: Swap handles memory-heavy games; `ext4` is stable and `btrfs` is more reliable in terms of backup friendliness.
 - **Tip**: Back up data; check SSD `lsblk -d -o NAME,ROTA`, ROTA=0.
 
 #### 3. Profile
@@ -95,7 +94,6 @@ Navigate with arrow keys, `Enter` to select, `Space` to toggle.
 #### 6. Network Configuration
 - **Purpose**: Sets up internet.
 - **Action**: Select `NetworkManager`.
-- **Tip**: Verify post-install `ping archlinux.org`.
 
 #### 7. Timezone
 - **Purpose**: Sets system clock.
