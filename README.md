@@ -496,7 +496,7 @@ Configure Steam with `proton-ge-custom` for optimal performance.
      - `gamemoderun`: Optimizes CPU/GPU.
      - `mangohud`: Shows FPS/GPU usage.<br/><br/>
    > **Note**: For wayland specific flags and options, please refer to: <a href="https://github.com/Etaash-mathamsetty/Proton/blob/em-10/docs/EM-ADDITIONS.md" target="_blank">Etaash-mathamsetty guide</a> 
-   - **Alternative for beginners**: Use simpler options to avoid issues with experimental flags:
+   - **Alternative for beginners**: Use simpler options to avoid issues with experimental flags:<br/><br/>
    ```plaintext
    PROTON_ENABLE_WAYLAND=1 gamemoderun mangohud %command%
    ```
