@@ -478,8 +478,8 @@ Configure Steam with `proton-ge-custom` for optimal performance.
      - `PROTON_FSR4_UPGRADE=1`: Experimental FSR 4.0 upscaling.
      - `PROTON_DLSS_UPGRADE=1`: Experimental DLSS (NVIDIA only).
      - `gamemoderun`: Optimizes CPU/GPU.
-     - `mangohud`: Shows FPS/GPU usage.
-    
+     - `mangohud`: Shows FPS/GPU usage.<br/><br/>
+   > **Note**: For wayland specific flags and options, please refer to: https://github.com/Etaash-mathamsetty/Proton/blob/em-10/docs/EM-ADDITIONS.md
    - **Alternative for beginners**: Use simpler options to avoid issues with experimental flags:
    ```plaintext
    PROTON_ENABLE_WAYLAND=1 gamemoderun mangohud %command%
