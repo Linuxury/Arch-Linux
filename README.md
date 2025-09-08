@@ -318,7 +318,8 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
            steam lib32-alsa-plugins lib32-giflib lib32-gst-plugins-base-libs \
            lib32-gtk3 lib32-libjpeg-turbo lib32-libva lib32-mpg123 lib32-ocl-icd \
            lib32-opencl-icd-loader lib32-openal webapp-manager chromium \
-           pdfarranger phonon-qt6-gstreamer-git mission-center --needed
+           pdfarranger phonon-qt6-gstreamer-git mission-center kdepim-addons \
+           merkuro --needed
    ```
    > **Note**: The backslash `\` splits long commands for readability without affecting execution. Multiple Java versions may cause conflicts; consider only `jre-openjdk` (In my case I need multiple versions for Minecraft. Review AUR PKGBUILDs.
 
