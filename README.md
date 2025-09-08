@@ -321,7 +321,78 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
            pdfarranger phonon-qt6-gstreamer-git mission-center kdepim-addons \
            merkuro --needed
    ```
-   > **Note**: The backslash `\` splits long commands for readability without affecting execution. Multiple Java versions may cause conflicts; consider only `jre-openjdk` (In my case I need multiple versions for Minecraft. Review AUR PKGBUILDs.
+   > **Note**: The backslash `\` splits long commands for readability without affecting execution. Multiple Java versions may cause conflicts; consider only `jre-openjdk` (In my case, I need multiple versions for Minecraft. Review AUR PKGBUILDs.
+   
+   > **If you would like the list broken into categories, see below.**
+      - **Connectivity Companions**<br />
+        Tools for managing network connections, Bluetooth, and device integration.
+           ```bash
+           paru -S bluez bluez-utils networkmanager kdeconnect --needed
+           ```
+
+      - **System Sentinels**<br />
+        Utilities for system monitoring, maintenance, backups, and updates.
+           ```bash
+            paru -S fastfetch gnome-disk-utility power-profiles-daemon reflector rsync \
+                    timeshift ufw topgrade mission-center pacman-contrib pamac-aur \
+                    plasma6-applets-arch-update-notifier --needed
+           ```
+
+      - **Shell Sorcerers**<br />
+        Enhancements for the command-line experience, including shells, terminals, and prompts.
+           ```bash
+            paru -S fish ghostty starship --needed
+           ```
+
+      - **Aesthetic Artisans**<br />
+        Customization tools for themes, icons, cursors, and fonts to enhance the desktop's look.
+           ```bash
+            paru -S kvantum nerd-fonts plasma6-themes-layan-git tela-icon-theme-git \
+                    breezex-cursor-theme --needed
+           ```
+      - **Gaming Gladiators**<br />
+        Software and libraries for gaming, including launchers, compatibility layers, and performance tools.
+           ```bash
+            paru -S mangohud openrgb proton-ge-custom protonplus protontricks winetricks \
+                    wine gamemode gamescope lutris steam heroic-games-launcher-bin \
+                    legacy-launcher sgdboop-bin lsfg-vk-git alsa-plugins giflib glfw \
+                    gst-plugins-base-libs libjpeg-turbo libva libxslt mpg123 openal \
+                    opencl-icd-loader ttf-liberation vulkan-tools lib32-alsa-plugins \
+                    lib32-giflib lib32-gst-plugins-base-libs lib32-gtk3 lib32-libjpeg-turbo \
+                    lib32-libva lib32-mpg123 lib32-ocl-icd lib32-opencl-icd-loader \
+                    lib32-openal --needed
+           ```
+
+      - **Productivity Pioneers**<br />
+        Applications for office work, email, scheduling, and document management.
+           ```bash
+            paru -S onlyoffice-bin thunderbird pdfarranger okular merkuro kdepim-addons \
+                    kwalletmanager fluent-reader-bin flatpak --needed
+           ```
+
+      - **Web Wanderers**<br />
+        Browsers and tools for web navigation and turning sites into desktop apps.
+           ```bash
+            paru -S firefox chromium webapp-manager --needed
+           ```
+
+      - **Media Maestros**<br />
+        Players and viewers for audio, video, and images.
+           ```bash
+            paru -S vvave showtime phonon-qt6-gstreamer-git loupe --needed
+           ```
+
+      - **Development Dynamos**<br />
+        Runtimes and tools for development, focusing on Java environments.
+           ```bash
+            paru -S jre21-openjdk jre22-openjdk jre23-openjdk --needed
+           ```
+
+      - **Automation Allies**<br />
+        Tools for automating user inputs and system tasks.
+           ```bash
+            paru -S kdotool --needed
+           ```
 
 4. **Enable Flatpak**:
    ```bash
