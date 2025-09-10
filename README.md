@@ -701,7 +701,7 @@ Enhance KDE Plasma with tweaks.
     - Change Popup color:<br/>
         - **Name**: White `#D8DEE9` <br/>
         - **Source**: Teal `#88C0D0` <br/>
-        - **From Version**: Gray `#4C566A` <br/>
+        - **From Version**: Light Gray `#E5E9F0` <br/>
         - **Separator**: Green `#A3BE8C` <br/>
         - **To Version**: Bright white `#ECEFF4` <br/> <br/>
           <img width="510" height="398" alt="image" src="https://github.com/user-attachments/assets/acb87e0c-409c-4aca-aeee-9d4e545f4dc5" />
