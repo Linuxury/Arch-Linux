@@ -36,7 +36,7 @@ Configure the package manager `pacman` for performance and usability.
   
    ```bash
    sudo pacman -S reflector
-   sudo reflector --country 'United States' --latest 20 --sort rate --save /etc/pacman.d/mirrorlist
+   sudo reflector --country 'United States' --latest 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist
    ```
    > **Note**: Replace `--country 'United States'` with your country e.g., `--country 'Germany,France'` or omit for all mirrors.
 
