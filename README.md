@@ -254,7 +254,7 @@ Configure tools and services in KDE Plasma.
 
 5. **Install essential tools**:
    ```bash
-   sudo pacman -S curl wget zip unzip nano net-tools dnsutils vulkan-tools --needed
+   sudo pacman -S curl wget zip unzip nano net-tools dnsutils vulkan-tools firefox firefox-dark-reader firefox-ublock-origin --needed
    ```
 
 6. **Reboot**:
