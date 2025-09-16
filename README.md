@@ -116,7 +116,7 @@ Navigate with arrow keys, `Enter` to select, `Space` to toggle.
 
 #### 11. Additional Packages
 - **Purpose**: Installs extra packages.
-- **Action**: Enter `firefox vulkan-tools`.
+- **Action**: Enter `/firefox` `/firefox-dark-reader` `/firefox-ublock-origin` `/vulkan-tools`.
 - **Why for Gaming?**: Sets up web access, graphics, and gaming.
 - **Tip**: Use `/` to search.
 
