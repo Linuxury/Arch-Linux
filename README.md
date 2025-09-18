@@ -509,31 +509,20 @@ Customize tools and shells with dotfiles.
    > **Warning**: Verify repository `curl -I https://github.com/linuxury/dotfiles`.
 
 2. **Create symlinks**:
-   - Back up existing configurations [optional]:<br /><br/>
-
-   
-   ```bash
-   mv ~/.config/MangoHud ~/.config/MangoHud.bak 2>/dev/null
-   mv ~/.config/Kvantum ~/.config/Kvantum.bak 2>/dev/null
-   mv ~/.config/fish ~/.config/fish.bak 2>/dev/null
-   mv ~/.config/fastfetch ~/.config/fastfetch.bak 2>/dev/null
-   mv ~/.config/ghostty ~/.config/ghostty.bak 2>/dev/null
-   mv ~/.config/bazaar-config ~/.config/bazaar-config.bak 2>/dev/null
-   mv ~/.config/helix ~/.config/helix.bak 2>/dev/null
-   mv ~/.config/starship ~/.config/starship.bak 2>/dev/null
-   ```
    - Create symlinks:<br /><br/>
 
 
    ```bash
-   ln -s ~/Documents/GitRepos/dotfiles/MangoHud ~/.config
-   ln -s ~/Documents/GitRepos/dotfiles/Kvantum ~/.config
-   ln -s ~/Documents/GitRepos/dotfiles/fish ~/.config
-   ln -s ~/Documents/GitRepos/dotfiles/fastfetch ~/.config
-   ln -s ~/Documents/GitRepos/dotfiles/ghostty ~/.config
    ln -s ~/Documents/GitRepos/dotfiles/bazaar-config ~/.config
+   ln -s ~/Documents/GitRepos/dotfiles/dunst ~/.config
+   ln -s ~/Documents/GitRepos/dotfiles/fastfetch ~/.config
+   ln -s ~/Documents/GitRepos/dotfiles/fish ~/.config
+   ln -s ~/Documents/GitRepos/dotfiles/ghostty ~/.config
    ln -s ~/Documents/GitRepos/dotfiles/helix ~/.config
+   ln -s ~/Documents/GitRepos/dotfiles/Kvantum ~/.config
+   ln -s ~/Documents/GitRepos/dotfiles/MangoHud ~/.config
    ln -s ~/Documents/GitRepos/dotfiles/starship ~/.config
+   ln -s ~/Documents/GitRepos/dotfiles/topgrade.d ~/.config
    ```
    Verify:
    ```bash
