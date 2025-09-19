@@ -528,6 +528,8 @@ Customize tools and shells with dotfiles.
    ```bash
    ls -l ~/.config | grep dotfiles
    ```
+   <img width="1149" height="785" alt="image" src="https://github.com/user-attachments/assets/ded32d26-81b8-4844-be3a-5fd11544c6e8" />
+
 
 ## G. Optimize Steam for Gaming
 
