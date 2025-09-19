@@ -696,6 +696,47 @@ Enhance KDE Plasma with tweaks.
           <img width="510" height="398" alt="image" src="https://github.com/user-attachments/assets/acb87e0c-409c-4aca-aeee-9d4e545f4dc5" />
 
 
+
+6. **Dunst Notification Configuration**:
+    - Disable Plasma's Notification Service:
+        - Open System Settings > Startup and Shutdown > Background Services (or search for "Notifications" in the settings).
+        - Under System Services, find "Notifications" and set it to Disabled. This prevents Plasma from claiming the D-Bus notification service.
+        - Alternatively, for a more permanent (but hackier) approach, rename Plasma's D-Bus service file to prevent it from loading:
+             ```plaintext
+             sudo mv /usr/share/dbus-1/services/org.kde.plasma.Notifications.service /usr/share/dbus-1/services/org.kde.plasma.Notifications.service.disabled
+             ```
+
+             > To revert, rename it back. `Path may vary slightly by distro; check /usr/share/dbus-1/services/` 
+
+    - Autostart Dunst:
+        - In System Settings > Startup and Shutdown > Autostart, click Add > Add Application and select dunst (or create a script to launch it).
+        - Alternatively, add it to your `~/.xinitrc` or `~/.xprofile` if you use a custom session, or use a systemd user service for better reliability:
+             ```plaintext
+             mkdir -p ~/.config/systemd/user
+             echo '[Unit]
+             Description=Dunst
+             [Service]
+             ExecStart=/usr/bin/dunst
+             Restart=always
+             [Install]
+             WantedBy=default.target' > ~/.config/systemd/user/dunst.service
+             systemctl --user enable --now dunst.service
+             ```
+
+    - Restart Plasma:
+        - Log out and back in, or run `kquitapp5 plasmashell && kstart5 plasmashell` in a terminal to reload the shell without logging out. This ensures the D-Bus service switches to Dunst.<br /><br />
+             > You could reload with<br />
+             ```plaintext
+             killall dunst && dunst &
+             ```
+
+    - Test Dunst Notifications:<br/>
+        - Send a test notification with
+             ```plaintext
+             notify-send "Test" "Hello from Dunst!"
+             ```
+
+
 ## I. Troubleshooting Tips
 - **Package fails**: Check dependencies `sudo pacman -S <package>` or PKGBUILD `paru -Si <package>`.
 - **Service fails**: Check status `systemctl status <service>`, logs `journalctl -xe`.
