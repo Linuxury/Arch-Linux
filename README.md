@@ -666,7 +666,8 @@ Enhance KDE Plasma with tweaks.
    > **Warning**: `GRUB_TIMEOUT=0` and `loglevel=0` make boot fast and silent but may hide errors and make GRUB menu access difficult (use `Shift` or `Esc` during boot).
    
    After all changes, it should look something similar to this:<br/><br/>
-   <img width="1116" height="674" alt="image" src="https://github.com/user-attachments/assets/bf3ecc61-4578-4576-8bfc-9e5702b3114d" />
+   <img width="1099" height="727" alt="image" src="https://github.com/user-attachments/assets/0683b148-266d-4356-a5e9-bfa8a7204fde" />
+
 
 
 5. **Arch Update Counter configuration**:
