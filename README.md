@@ -735,8 +735,16 @@ Enhance KDE Plasma with tweaks.
     - Test Dunst Notifications:<br/>
         - Send a test notification with
              ```plaintext
-             notify-send "Test" "Hello from Dunst!"
+             notify-send --urgency=low --icon=firefox "Firefox Test" "Testing Firefox icon"
+             notify-send --urgency=normal --icon=dialog-information "Info Test" "Testing dialog-information icon"
+             notify-send --urgency=normal --icon=update "Update Test" "Testing update icon"
+             notify-send --urgency=normal --icon=mail "Mail Test" "Testing mail icon"
+             notify-send --urgency=critical --icon=dialog-error "Error Test" "Testing dialog-error icon"
+             notify-send --urgency=normal --icon=terminal "Terminal Test" "Testing terminal icon"
+             notify-send --urgency=normal --icon=document "Document Test" "Testing document icon"
              ```
+             <img width="377" height="542" alt="image" src="https://github.com/user-attachments/assets/6dfcaca2-4b32-4028-a130-4148100817ff" />
+
 
 
 ## I. Troubleshooting Tips
