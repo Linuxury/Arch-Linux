@@ -532,55 +532,7 @@ Customize tools and shells with dotfiles.
    <img width="1149" height="785" alt="image" src="https://github.com/user-attachments/assets/ded32d26-81b8-4844-be3a-5fd11544c6e8" />
 
 
-## G. Optimize Steam for Gaming
-
-Configure Steam with `proton-ge-custom` for optimal performance.
-
-### Why?
-- `proton-ge-custom` (installed in Section D) enables Windows games for Steam and Lutris.
-- Custom launch options maximize performance and features.
-
-### Steps
-1. **Set `proton-ge-custom`**:
-   - Open Steam, go to `Settings > Compatibility (Steam Play)`, enable Steam Play for all titles, select `Proton-GE`.
-   - For Lutris, set `proton-ge-custom` as the runner for games (configured in Lutris GUI).
-
-2. **Set Steam launch options**:
-   - Right-click a game in Steam, select `Properties`, add to `Launch Options`:<br/><br/>
-
-   ```plaintext
-   PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 PROTON_FSR4_UPGRADE=1 gamemoderun %command%
-   ```
-   - **Explanation**:
-     - `PROTON_ENABLE_WAYLAND=1`: Enables Wayland for scaling/HDR.
-     - `PROTON_ENABLE_HDR=1`: Enables HDR (monitor must support it).
-     - `SteamDeck=1`: Optimizes for Steam Deck-like behavior.
-     - `PROTON_FSR4_UPGRADE=1`: Experimental FSR 4.0 upscaling.
-     - `PROTON_DLSS_UPGRADE=1`: Experimental DLSS (NVIDIA only).
-     - `gamemoderun`: Optimizes CPU/GPU.
-     - `mangohud`: Shows FPS/GPU usage.<br/><br/>
-   > **Note**: For wayland specific flags and options, please refer to: <a href="https://github.com/Etaash-mathamsetty/Proton/blob/em-10/docs/EM-ADDITIONS.md" target="_blank">Etaash-mathamsetty guide</a> 
-   - **Alternative for beginners**: Use simpler options to avoid issues with experimental flags:<br/><br/>
-   ```plaintext
-   PROTON_ENABLE_WAYLAND=1 gamemoderun mangohud %command%
-   ```
-   Verify Wayland:
-   ```bash
-   echo $XDG_SESSION_TYPE  # Should output "wayland"
-   ```
-   > **Warning**: Experimental flags (`PROTON_FSR4_UPGRADE`, `PROTON_DLSS_UPGRADE`) may cause instability. Test games without them if issues arise.
-
-3. **Verify ProtonPlus**:
-   - Ensure `proton-ge-custom` is installed:<br/><br/>
-
-   ```bash
-   ls ~/.local/share/Steam/compatibilitytools.d  # Should list Proton-GE-Custom
-   ```
-
-4. **Configure Lutris**:
-   - Open Lutris, set `proton-ge-custom` as the runner for games in the game settings.
-
-## H. Optional Customizations
+## G. Optional Customizations
 
 Enhance KDE Plasma with tweaks.
 
@@ -747,6 +699,131 @@ Enhance KDE Plasma with tweaks.
              ```
              <img width="377" height="542" alt="image" src="https://github.com/user-attachments/assets/6dfcaca2-4b32-4028-a130-4148100817ff" />
 
+7. **uBlock Origin Extension**:
+    - My filters:
+        - Go into your `Firefox` extension and look for `uBlock Origin` <br/>
+        - Then enter into `Settings`, then `My filter` tab <br />
+        - Now copy the code below and hit `Apply Changes` to apply this filter, it will remove all `Shorts` out of `Youtube`  <br/> 
+
+            ```bash
+            ! Title: Hide YouTube Shorts
+            ! Description: Hide all traces of YouTube shorts videos on YouTube
+            ! Version: 1.8.0
+            ! Last modified: 2023-01-08 20:02
+            ! Expires: 2 weeks (update frequency)
+            ! Homepage: https://github.com/gijsdev/ublock-hide-yt-shorts
+            ! License: https://github.com/gijsdev/ublock-hide-yt-shorts/blob/master/LICENSE.md
+            
+            ! Hide all videos containing the phrase "#shorts"
+            youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#shorts))
+            youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#Shorts))
+            youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#short))
+            youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#Short))
+            
+            ! Hide all videos with the shorts indicator on the thumbnail
+            youtube.com##ytd-grid-video-renderer:has([overlay-style="SHORTS"])
+            youtube.com##ytd-rich-item-renderer:has([overlay-style="SHORTS"])
+            youtube.com##ytd-video-renderer:has([overlay-style="SHORTS"])
+            youtube.com##ytd-item-section-renderer.ytd-section-list-renderer[page-subtype="subscriptions"]:has(ytd-video-renderer:has([overlay-style="SHORTS"]))
+            
+            ! Hide shorts button in sidebar
+            youtube.com##ytd-guide-entry-renderer:has-text(Shorts)
+            youtube.com##ytd-mini-guide-entry-renderer:has-text(Shorts)
+            
+            ! Hide shorts section on homepage
+            youtube.com##ytd-rich-section-renderer:has(#rich-shelf-header:has-text(Shorts))
+            youtube.com##ytd-reel-shelf-renderer:has(.ytd-reel-shelf-renderer:has-text(Shorts))
+            
+            ! Hide shorts tab on channel pages
+            ! Old style
+            youtube.com##tp-yt-paper-tab:has(.tp-yt-paper-tab:has-text(Shorts))
+            ! New style (2023-10)
+            youtube.com##yt-tab-shape:has-text(/^Shorts$/)
+            
+            ! Hide shorts in video descriptions
+            youtube.com##ytd-reel-shelf-renderer.ytd-structured-description-content-renderer:has-text("Shorts remixing this video")
+            
+            ! Remove empty spaces in grid
+            youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
+            
+            
+            !!! MOBILE !!!
+            
+            ! Hide all videos in home feed containing the phrase "#shorts"
+            m.youtube.com##ytm-rich-item-renderer:has(#video-title:has-text(#shorts))
+            m.youtube.com##ytm-rich-item-renderer:has(#video-title:has-text(#Shorts))
+            m.youtube.com##ytm-rich-item-renderer:has(#video-title:has-text(#short))
+            m.youtube.com##ytm-rich-item-renderer:has(#video-title:has-text(#Short))
+            
+            ! Hide all videos in subscription feed containing the phrase "#shorts"
+            m.youtube.com##ytm-item-section-renderer:has(#video-title:has-text(#shorts))
+            m.youtube.com##ytm-item-section-renderer:has(#video-title:has-text(#Shorts))
+            m.youtube.com##ytm-item-section-renderer:has(#video-title:has-text(#short))
+            m.youtube.com##ytm-item-section-renderer:has(#video-title:has-text(#Short))
+            
+            ! Hide shorts button in the bottom navigation bar
+            m.youtube.com##ytm-pivot-bar-item-renderer:has(.pivot-shorts)
+            
+            ! Hide all videos with the shorts indicator on the thumbnail
+            m.youtube.com##ytm-video-with-context-renderer:has([data-style="SHORTS"])
+            
+            ! Hide shorts sections
+            m.youtube.com##ytm-rich-section-renderer:has(ytm-reel-shelf-renderer:has(.reel-shelf-title-wrapper:has-text(Shorts)))
+            m.youtube.com##ytm-reel-shelf-renderer.item:has(.reel-shelf-title-wrapper:has-text(Shorts))
+            
+            ! Hide shorts tab on channel pages
+            m.youtube.com##.single-column-browse-results-tabs>a:has-text(Shorts)
+                        
+            ```
+
+
+## H. Optimize Steam for Gaming
+
+Configure Steam with `proton-ge-custom` for optimal performance.
+
+### Why?
+- `proton-ge-custom` (installed in Section D) enables Windows games for Steam and Lutris.
+- Custom launch options maximize performance and features.
+
+### Steps
+1. **Set `proton-ge-custom`**:
+   - Open Steam, go to `Settings > Compatibility (Steam Play)`, enable Steam Play for all titles, select `Proton-GE`.
+   - For Lutris, set `proton-ge-custom` as the runner for games (configured in Lutris GUI).
+
+2. **Set Steam launch options**:
+   - Right-click a game in Steam, select `Properties`, add to `Launch Options`:<br/><br/>
+
+   ```plaintext
+   PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 PROTON_FSR4_UPGRADE=1 gamemoderun %command%
+   ```
+   - **Explanation**:
+     - `PROTON_ENABLE_WAYLAND=1`: Enables Wayland for scaling/HDR.
+     - `PROTON_ENABLE_HDR=1`: Enables HDR (monitor must support it).
+     - `SteamDeck=1`: Optimizes for Steam Deck-like behavior.
+     - `PROTON_FSR4_UPGRADE=1`: Experimental FSR 4.0 upscaling.
+     - `PROTON_DLSS_UPGRADE=1`: Experimental DLSS (NVIDIA only).
+     - `gamemoderun`: Optimizes CPU/GPU.
+     - `mangohud`: Shows FPS/GPU usage.<br/><br/>
+   > **Note**: For Wayland-specific flags and options, please refer to: <a href="https://github.com/Etaash-mathamsetty/Proton/blob/em-10/docs/EM-ADDITIONS.md" target="_blank">Etaash-mathamsetty guide</a> 
+   - **Alternative for beginners**: Use simpler options to avoid issues with experimental flags:<br/><br/>
+   ```plaintext
+   PROTON_ENABLE_WAYLAND=1 gamemoderun mangohud %command%
+   ```
+   Verify Wayland:
+   ```bash
+   echo $XDG_SESSION_TYPE  # Should output "wayland"
+   ```
+   > **Warning**: Experimental flags (`PROTON_FSR4_UPGRADE`, `PROTON_DLSS_UPGRADE`) may cause instability. You can test games without them if issues arise.
+
+3. **Verify ProtonPlus**:
+   - Ensure `proton-ge-custom` is installed:<br/><br/>
+
+   ```bash
+   ls ~/.local/share/Steam/compatibilitytools.d  # Should list Proton-GE-Custom
+   ```
+
+4. **Configure Lutris**:
+   - Open Lutris, set `proton-ge-custom` as the runner for games in the game settings.
 
 
 ## I. Troubleshooting Tips
