@@ -263,7 +263,7 @@ Configure tools and services in KDE Plasma.
    ```
    Verify microcode:
    ```bash
-   dmesg | grep microcode
+   sudo dmesg | grep microcode
    ```
 
 ## D. Gaming and Desktop Applications
