@@ -665,7 +665,7 @@ Enhance KDE Plasma with tweaks.
              > To revert, rename it back. `Path may vary slightly by distro; check /usr/share/dbus-1/services/` 
 
     - Autostart Dunst:
-        - In System Settings > Startup and Shutdown > Autostart, click Add > Add Application and select dunst (or create a script to launch it).
+        - In System Settings > Startup and Shutdown > Autostart, click Add > Add Application and select dunst (just type `dunst`, it will work).
         - Alternatively, add it to your `~/.xinitrc` or `~/.xprofile` if you use a custom session, or use a systemd user service for better reliability:
              ```plaintext
              mkdir -p ~/.config/systemd/user
