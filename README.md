@@ -512,7 +512,6 @@ Customize tools and shells with dotfiles.
      ln -s ~/Documents/GitRepos/dotfiles/helix ~/.config
      ln -s ~/Documents/GitRepos/dotfiles/Kvantum ~/.config
      ln -s ~/Documents/GitRepos/dotfiles/MangoHud ~/.config
-     ln -s ~/Documents/GitRepos/dotfiles/MangoHud ~/.config
      ln -s ~/Documents/GitRepos/dotfiles/starship ~/.config
      ln -s ~/Documents/GitRepos/dotfiles/topgrade.d ~/.config
      rsync -a --ignore-existing ~/Documents/GitRepos/dotfiles/Pictures ~/
