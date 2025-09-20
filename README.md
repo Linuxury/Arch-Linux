@@ -404,12 +404,6 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
    flatpak remote-list  # Should show flathub
    ```
 
-5. **Install Bazaar**:
-   ```bash
-   flatpak install flathub io.github.kolunmi.Bazaar
-   ```
-   > **Note**: Bazaar configuration is handled by dotfiles in Section F.
-
 ## E. Enable System Services
 
 Enable services for SSD maintenance, Bluetooth, networking, and firewall.
