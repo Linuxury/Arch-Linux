@@ -509,22 +509,21 @@ Customize tools and shells with dotfiles.
    > **Warning**: Verify repository `curl -I https://github.com/linuxury/dotfiles`.
 
 2. **Create symlinks**:
-   - Create symlinks:<br /><br/>
-
-
-   ```bash
-   ln -s ~/Documents/GitRepos/dotfiles/bazaar-config ~/.config
-   ln -s ~/Documents/GitRepos/dotfiles/dunst ~/.config
-   ln -s ~/Documents/GitRepos/dotfiles/fastfetch ~/.config
-   ln -s ~/Documents/GitRepos/dotfiles/fish ~/.config
-   ln -s ~/Documents/GitRepos/dotfiles/ghostty ~/.config
-   ln -s ~/Documents/GitRepos/dotfiles/helix ~/.config
-   ln -s ~/Documents/GitRepos/dotfiles/Kvantum ~/.config
-   ln -s ~/Documents/GitRepos/dotfiles/MangoHud ~/.config
-   ln -s ~/Documents/GitRepos/dotfiles/starship ~/.config
-   ln -s ~/Documents/GitRepos/dotfiles/topgrade.d ~/.config
-   rsync -a --ignore-existing ~/Documents/GitRepos/dotfiles/Pictures ~/
-   ```
+     ```bash
+     ln -s ~/Documents/GitRepos/dotfiles/bazaar-config ~/.config
+     ln -s ~/Documents/GitRepos/dotfiles/dunst ~/.config
+     ln -s ~/Documents/GitRepos/dotfiles/fastfetch ~/.config
+     ln -s ~/Documents/GitRepos/dotfiles/fish ~/.config
+     ln -s ~/Documents/GitRepos/dotfiles/ghostty ~/.config
+     ln -s ~/Documents/GitRepos/dotfiles/helix ~/.config
+     ln -s ~/Documents/GitRepos/dotfiles/Kvantum ~/.config
+     ln -s ~/Documents/GitRepos/dotfiles/MangoHud ~/.config
+     ln -s ~/Documents/GitRepos/dotfiles/MangoHud ~/.config
+     ln -s ~/Documents/GitRepos/dotfiles/starship ~/.config
+     ln -s ~/Documents/GitRepos/dotfiles/topgrade.d ~/.config
+     rsync -a --ignore-existing ~/Documents/GitRepos/dotfiles/Pictures ~/
+     sudo ln -s ~/Documents/GitRepos/dotfiles/nano/.nanorc /root/ ~/
+     ```
    Verify:
    ```bash
    ls -l ~/.config | grep dotfiles
