@@ -319,7 +319,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
            lib32-gtk3 lib32-libjpeg-turbo lib32-libva lib32-mpg123 lib32-ocl-icd \
            lib32-opencl-icd-loader lib32-openal webapp-manager chromium \
            pdfarranger phonon-qt6-gstreamer-git mission-center kdepim-addons \
-           merkuro dunst --needed
+           merkuro dunst nano-syntax-highlighting --needed
    ```
    > **Note**: The backslash `\` splits long commands for readability without affecting execution. Multiple Java versions may cause conflicts; consider only `jre-openjdk` (In my case, I need multiple versions for Minecraft. Review AUR PKGBUILDs.
    
@@ -341,7 +341,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
       - **Shell Sorcerers**<br />
         Enhancements for the command-line experience, including shells, terminals, and prompts.
            ```bash
-            paru -S fish ghostty starship --needed
+            paru -S fish ghostty starship nano-syntax-highlighting --needed
            ```
 
       - **Aesthetic Artisans**<br />
