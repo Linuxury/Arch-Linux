@@ -311,14 +311,14 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
            topgrade plasma6-themes-layan-git tela-icon-theme \
            breezex-cursor-theme plasma6-applets-arch-update-notifier \
            heroic-games-launcher-bin firefox jre21-openjdk jre22-openjdk \
-           jre23-openjdk flatpak sgdboop-bin lsfg-vk-git vvave okular showtime \
+           jre23-openjdk flatpak sgdboop-bin lsfg-vk-git amberol showtime \
            fluent-reader-bin alsa-plugins giflib glfw gst-plugins-base-libs \
            libjpeg-turbo libva libxslt mpg123 openal opencl-icd-loader \
            ttf-liberation vulkan-tools winetricks wine gamemode gamescope lutris \
            steam lib32-alsa-plugins lib32-giflib lib32-gst-plugins-base-libs \
            lib32-gtk3 lib32-libjpeg-turbo lib32-libva lib32-mpg123 lib32-ocl-icd \
            lib32-opencl-icd-loader lib32-openal webapp-manager chromium \
-           pdfarranger phonon-qt6-gstreamer-git mission-center kdepim-addons \
+           papers phonon-qt6-gstreamer-git mission-center kdepim-addons \
            merkuro dunst nano-syntax-highlighting bazaar xfsprogs discord --needed
    ```
    > **Note**: The backslash `\` splits long commands for readability without affecting execution. Multiple Java versions may cause conflicts; consider only `jre-openjdk` (In my case, I need multiple versions for Minecraft. Review AUR PKGBUILDs.
@@ -366,7 +366,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
       - **Productivity Pioneers**<br />
         Applications for office work, email, scheduling, and document management.
            ```bash
-            paru -S onlyoffice-bin thunderbird pdfarranger okular merkuro kdepim-addons \
+            paru -S onlyoffice-bin thunderbird papers merkuro kdepim-addons \
                     kwalletmanager fluent-reader-bin flatpak --needed
            ```
 
@@ -379,7 +379,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
       - **Media Maestros**<br />
         Players and viewers for audio, video, and images.
            ```bash
-            paru -S vvave showtime phonon-qt6-gstreamer-git loupe --needed
+            paru -S amberol showtime phonon-qt6-gstreamer-git loupe --needed
            ```
 
       - **Development Dynamos**<br />
