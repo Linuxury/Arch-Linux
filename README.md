@@ -62,87 +62,87 @@ archinstall
 ```
 Navigate with arrow keys, `Enter` to select, `Space` to toggle.
 
-#### 1. Select Mirrors
+**1. Select Mirrors**
 - **Purpose**: Choose servers for fast package downloads.
 - **Action**: Select your region e.g., `United States` or `Global`.
 - **Tip**: Keep the default if `reflector` was used.
 
-#### 2. Disk Configuration
+**2. Disk Configuration**
 - **Purpose**: Partitions the drive.
 - **Action**: Choose `Auto-partition` (EFI, root, 4–8 GB swap, `ext4` or `btrfs` filesystem).
 - **Why for Gaming?**: Swap handles memory-heavy games; `ext4` is stable and `btrfs` is more reliable in terms of backup friendliness.
 - **Tip**: Back up data; check SSD `lsblk -d -o NAME,ROTA`, ROTA=0.
 
-#### 3. Profile
+**3. Profile**
 - **Purpose**: Selects desktop environment.
 - **Action**: Choose `desktop` > `plasma`.
 - **Why for Gaming?**: KDE Plasma supports Wayland and HDR.
 - **Tip**: Avoid minimal profiles unless advanced.
 
-#### 4. Audio
+**4. Audio**
 - **Purpose**: Selects audio server.
 - **Action**: Choose `pipewire`.
 - **Why for Gaming?**: Low-latency audio for games.
 - **Tip**: Preferred over `pulseaudio`.
 
-#### 5. Kernel
+**5. Kernel**
 - **Purpose**: Selects kernel.
 - **Action**: Choose `linux-zen`.
 - **Why for Gaming?**: Reduces latency.
 - **Tip**: Use `linux` if hardware issues arise.
 
-#### 6. Network Configuration
+**6. Network Configuration**
 - **Purpose**: Sets up internet.
 - **Action**: Select `NetworkManager`.
 
-#### 7. Timezone
+**7. Timezone**
 - **Purpose**: Sets system clock.
 - **Action**: Choose region/city e.g., `America/New_York`.
 - **Tip**: Use `Tab` to search.
 
-#### 8. Hostname
+**8. Hostname**
 - **Purpose**: Names computer.
 - **Action**: Enter name e.g., `gaming-pc`.
 - **Tip**: Use lowercase, no special characters.
 
-#### 9. Root Password
+**9. Root Password**
 - **Purpose**: Sets admin password.
 - **Action**: Enter secure password.
 
-#### 10. User Account
+**10. User Account**
 - **Purpose**: Creates daily-use account.
 - **Action**: Add user, e.g., `gamer`, set password, enable `sudo`.
 - **Tip**: Choose simple username.
 
-#### 11. Additional Packages
+**11. Additional Packages**
 - **Purpose**: Installs extra packages.
 - **Action**: Enter `/firefox` `/firefox-dark-reader` `/firefox-ublock-origin` `/vulkan-tools`.
 - **Why for Gaming?**: Sets up web access, graphics, and gaming.
 - **Tip**: Use `/` to search.
 
-#### 12. Additional Repositories
+**12. Additional Repositories**
 - **Purpose**: Enables `multilib` for 32-bit libraries.
 - **Action**: Toggle `multilib`.
 - **Why for Gaming?**: Required for Steam.
 - **Tip**: Ensure checked.
 
-#### 13. Bootloader
+**13. Bootloader**
 - **Purpose**: Installs bootloader.
 - **Action**: Choose `grub`.
 - **Why for Gaming?**: Supports kernel/microcode.
 - **Tip**: Verify UEFI `ls /sys/firmware/efi`.
 
-#### 14. Install
+**14. Install**
 - **Purpose**: Starts installation.
 - **Action**: Review choices, select `Install`.
 - **Tip**: Note errors, check logs `journalctl -b`.
 
-#### 15. Post-Installation
+**15. Post-Installation**
 - **Purpose**: Completes setup.
 - **Action**: Select `Reboot`.
 - **Tip**: Access GRUB `Shift` or `Esc` if boot fails.
 
-### Verify
+**Verify**
 ```bash
 echo $XDG_CURRENT_DESKTOP  # Should output "KDE"
 grep -A1 "\[multilib\]" /etc/pacman.conf
