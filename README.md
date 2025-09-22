@@ -319,7 +319,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
            lib32-gtk3 lib32-libjpeg-turbo lib32-libva lib32-mpg123 lib32-ocl-icd \
            lib32-opencl-icd-loader lib32-openal webapp-manager chromium \
            pdfarranger phonon-qt6-gstreamer-git mission-center kdepim-addons \
-           merkuro dunst nano-syntax-highlighting bazaar xfsprogs --needed
+           merkuro dunst nano-syntax-highlighting bazaar xfsprogs discord --needed
    ```
    > **Note**: The backslash `\` splits long commands for readability without affecting execution. Multiple Java versions may cause conflicts; consider only `jre-openjdk` (In my case, I need multiple versions for Minecraft. Review AUR PKGBUILDs.
    
@@ -373,7 +373,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
       - **Web Wanderers**<br />
         Browsers and tools for web navigation and turning sites into desktop apps.
            ```bash
-            paru -S firefox chromium webapp-manager --needed
+            paru -S firefox chromium webapp-manager discord --needed
            ```
 
       - **Media Maestros**<br />
