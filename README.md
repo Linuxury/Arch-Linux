@@ -321,7 +321,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
            papers phonon-qt6-gstreamer-git mission-center kdepim-addons \
            merkuro dunst nano-syntax-highlighting bazaar xfsprogs discord \
            gst-libav gst-plugins-base gst-plugins-good gst-plugins-bad \
-           gst-plugins-ugly --needed
+           gst-plugins-ugly obs-studio --needed
    ```
    > **Note**: The backslash `\` splits long commands for readability without affecting execution. Multiple Java versions may cause conflicts; consider only `jre-openjdk` (In my case, I need multiple versions for Minecraft. Review AUR PKGBUILDs.
    
@@ -383,7 +383,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
            ```bash
             paru -S amberol showtime phonon-qt6-gstreamer-git loupe gst-libav \
                     gst-plugins-base gst-plugins-good gst-plugins-bad \
-                    gst-plugins-ugly --needed
+                    gst-plugins-ugly obs-studio --needed
            ```
 
       - **Development Dynamos**<br />
