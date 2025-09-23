@@ -375,7 +375,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
       - **Web Wanderers**<br />
         Browsers and tools for web navigation and turning sites into desktop apps.
            ```bash
-            paru -S firefox chromium webapp-manager discord --needed
+            paru -S firefox chromium webapp-manager discord obs-studio --needed
            ```
 
       - **Media Maestros**<br />
@@ -383,7 +383,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
            ```bash
             paru -S amberol showtime phonon-qt6-gstreamer-git loupe gst-libav \
                     gst-plugins-base gst-plugins-good gst-plugins-bad \
-                    gst-plugins-ugly obs-studio --needed
+                    gst-plugins-ugly --needed
            ```
 
       - **Development Dynamos**<br />
