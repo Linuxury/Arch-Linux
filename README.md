@@ -116,7 +116,7 @@ Navigate with arrow keys, `Enter` to select, `Space` to toggle.
 
 **11. Additional Packages**
 - **Purpose**: Installs extra packages.
-- **Action**: Enter `/firefox` `/firefox-dark-reader` `/firefox-ublock-origin` `/vulkan-tools`.
+- **Action**: Enter `/firefox` `/firefox-ublock-origin` `/vulkan-tools`.
 - **Why for Gaming?**: Sets up web access, graphics, and gaming.
 - **Tip**: Use `/` to search.
 
@@ -254,7 +254,7 @@ Configure tools and services in KDE Plasma.
 
 5. **Install essential tools**:
    ```bash
-   sudo pacman -S curl wget zip unzip nano net-tools dnsutils vulkan-tools firefox firefox-dark-reader firefox-ublock-origin --needed
+   sudo pacman -S curl wget zip unzip nano net-tools dnsutils vulkan-tools firefox firefox-ublock-origin --needed
    ```
 
 6. **Reboot**:
