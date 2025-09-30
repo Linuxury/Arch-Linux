@@ -518,6 +518,7 @@ Customize tools and shells with dotfiles.
      ln -s ~/Documents/GitRepos/dotfiles/MangoHud ~/.config
      ln -s ~/Documents/GitRepos/dotfiles/starship ~/.config
      ln -s ~/Documents/GitRepos/dotfiles/topgrade.d ~/.config
+     ln -s ~/Documents/GitRepos/dotfiles/zed ~/.config     
      rsync -a --ignore-existing ~/Documents/GitRepos/dotfiles/Pictures ~/
      sudo ln -s ~/Documents/GitRepos/dotfiles/nano/.nanorc /root/ ~/
      ```
