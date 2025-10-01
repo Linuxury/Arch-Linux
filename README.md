@@ -305,7 +305,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
    ```bash
    paru -S bluez bluez-utils fastfetch fish ghostty gnome-disk-utility kvantum \
            kwalletmanager kdeconnect legacy-launcher networkmanager nerd-fonts \
-           mangohud openrgb onlyoffice-bin pamac-aur pacman-contrib \
+           mangohud openrgb onlyoffice-bin pamac pacman-contrib \
            power-profiles-daemon proton-ge-custom protonplus protontricks \
            reflector rsync starship thunderbird timeshift ufw kdotool loupe \
            topgrade plasma6-themes-layan-git tela-icon-theme \
@@ -336,7 +336,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
         Utilities for system monitoring, maintenance, backups, and updates.
            ```bash
             paru -S fastfetch gnome-disk-utility power-profiles-daemon reflector rsync \
-                    timeshift ufw topgrade mission-center pacman-contrib pamac-aur \
+                    timeshift ufw topgrade mission-center pacman-contrib pamac \
                     plasma6-applets-arch-update-notifier dunst bazaar xfsprogs --needed
            ```
 
