@@ -305,8 +305,8 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
    ```bash
    paru -S bluez bluez-utils fastfetch fish ghostty gnome-disk-utility kvantum \
            kwalletmanager kdeconnect legacy-launcher networkmanager nerd-fonts \
-           mangohud openrgb onlyoffice-bin pamac pacman-contrib \
-           power-profiles-daemon proton-ge-custom protontricks \
+           mangohud openrgb onlyoffice-bin pamac pacman-contrib zed \
+           power-profiles-daemon proton-ge-custom protontricks helix \
            reflector rsync starship thunderbird timeshift ufw kdotool loupe \
            topgrade plasma6-themes-layan-git tela-icon-theme thunderbird-ublock-origin \
            breezex-cursor-theme plasma6-applets-arch-update-notifier \
@@ -344,7 +344,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
       - **Shell Sorcerers**<br />
         Enhancements for the command-line experience, including shells, terminals, and prompts.
            ```bash
-            paru -S fish ghostty starship nano-syntax-highlighting --needed
+            paru -S fish ghostty starship nano-syntax-highlighting zed helix --needed
            ```
 
       - **Aesthetic Artisans**<br />
