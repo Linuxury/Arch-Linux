@@ -306,7 +306,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
    paru -S bluez bluez-utils fastfetch fish ghostty gnome-disk-utility kvantum \
            kwalletmanager kdeconnect legacy-launcher networkmanager nerd-fonts \
            mangohud openrgb onlyoffice-bin pamac pacman-contrib \
-           power-profiles-daemon proton-ge-custom protonplus protontricks \
+           power-profiles-daemon proton-ge-custom protontricks \
            reflector rsync starship thunderbird timeshift ufw kdotool loupe \
            topgrade plasma6-themes-layan-git tela-icon-theme \
            breezex-cursor-theme plasma6-applets-arch-update-notifier \
@@ -314,14 +314,14 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
            jre23-openjdk flatpak sgdboop-bin lsfg-vk-git amberol showtime \
            fluent-reader-bin alsa-plugins giflib glfw gst-plugins-base-libs \
            libjpeg-turbo libva libxslt mpg123 openal opencl-icd-loader \
-           ttf-liberation vulkan-tools winetricks wine gamemode gamescope lutris \
+           ttf-liberation vulkan-tools winetricks wine gamemode gamescope \
            steam lib32-alsa-plugins lib32-giflib lib32-gst-plugins-base-libs \
            lib32-gtk3 lib32-libjpeg-turbo lib32-libva lib32-mpg123 lib32-ocl-icd \
            lib32-opencl-icd-loader lib32-openal webapp-manager chromium \
            papers phonon-qt6-gstreamer-git mission-center kdepim-addons \
            merkuro dunst nano-syntax-highlighting bazaar xfsprogs discord \
            gst-libav gst-plugins-base gst-plugins-good gst-plugins-bad \
-           gst-plugins-ugly obs-studio --needed
+           gst-plugins-ugly obs-studio mcpelauncher-ui-git mcpelauncher-linux-git --needed
    ```
    > **Note**: The backslash `\` splits long commands for readability without affecting execution. Multiple Java versions may cause conflicts; consider only `jre-openjdk` (In my case, I need multiple versions for Minecraft. Review AUR PKGBUILDs.
    
@@ -355,14 +355,14 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
       - **Gaming Gladiators**<br />
         Software and libraries for gaming, including launchers, compatibility layers, and performance tools.
            ```bash
-            paru -S mangohud openrgb proton-ge-custom protonplus protontricks winetricks \
-                    wine gamemode gamescope lutris steam heroic-games-launcher-bin \
+            paru -S mangohud openrgb proton-ge-custom protontricks winetricks \
+                    wine gamemode gamescope steam heroic-games-launcher-bin \
                     legacy-launcher sgdboop-bin lsfg-vk-git alsa-plugins giflib glfw \
                     gst-plugins-base-libs libjpeg-turbo libva libxslt mpg123 openal \
                     opencl-icd-loader ttf-liberation vulkan-tools lib32-alsa-plugins \
                     lib32-giflib lib32-gst-plugins-base-libs lib32-gtk3 lib32-libjpeg-turbo \
                     lib32-libva lib32-mpg123 lib32-ocl-icd lib32-opencl-icd-loader \
-                    lib32-openal --needed
+                    lib32-openal mcpelauncher-ui-git mcpelauncher-linux-git --needed
            ```
 
       - **Productivity Pioneers**<br />
