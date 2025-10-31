@@ -35,10 +35,10 @@ Configure the package manager `pacman` for performance and usability.
    - Use `reflector` to select fast mirrors for your region.<br /><br />
   
    ```bash
-   sudo pacman -S reflector
-   sudo reflector --country 'United States' --latest 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist
+   sudo pacman -S reflector --needed
+   sudo reflector --country US --age 12 --latest 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist
    ```
-   > **Note**: Replace `--country 'United States'` with your country e.g., `--country 'Germany,France'` or omit for all mirrors.
+   > **Note**: Replace `--country US` with your country e.g., `--country 'Germany,France'` or omit for all mirrors.
 
 3. **Verify**:
    ```bash
