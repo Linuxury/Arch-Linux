@@ -305,7 +305,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
    ```bash
    paru -S bluez bluez-utils fastfetch fish ghostty gnome-disk-utility kvantum \
            kwalletmanager kdeconnect legacy-launcher networkmanager nerd-fonts \
-           mangohud openrgb onlyoffice-bin pamac pacman-contrib zed \
+           mangohud openrgb onlyoffice-bin pamac pacman-contrib zed faugus-launcher \
            power-profiles-daemon proton-ge-custom protontricks helix \
            reflector rsync starship thunderbird timeshift ufw kdotool loupe \
            topgrade plasma6-themes-layan-git tela-icon-theme thunderbird-ublock-origin \
@@ -357,7 +357,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
         Software and libraries for gaming, including launchers, compatibility layers, and performance tools.
            ```bash
             paru -S mangohud openrgb proton-ge-custom protontricks winetricks \
-                    wine gamemode gamescope steam heroic-games-launcher-bin \
+                    wine gamemode gamescope steam heroic-games-launcher-bin faugus-launcher \
                     legacy-launcher sgdboop-bin lsfg-vk-git alsa-plugins giflib glfw \
                     gst-plugins-base-libs libjpeg-turbo libva libxslt mpg123 openal \
                     opencl-icd-loader ttf-liberation vulkan-tools lib32-alsa-plugins \
