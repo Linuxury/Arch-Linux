@@ -501,8 +501,8 @@ Customize tools and shells with dotfiles.
 1. **Clone dotfiles**:
    ```bash
    mkdir -p ~/Documents/Dotfiles/
-   sudo git clone https://github.com/linuxury/dotfiles.git ~/Documents/Dotfiles
-   sudo chown -R your_username:your_username ~/Documents/Dotfiles
+   git clone https://github.com/linuxury/dotfiles.git ~/Documents/Dotfiles
+   sudo chown -R $USER:$USER ~/Documents/Dotfiles
    ```
    > **Warning**: Verify repository `curl -I https://github.com/linuxury/dotfiles`.
 
