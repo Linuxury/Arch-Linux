@@ -500,34 +500,30 @@ Customize tools and shells with dotfiles.
 ### Steps
 1. **Clone dotfiles**:
    ```bash
-   mkdir -p ~/Documents/GitRepos
-   cd ~/Documents/GitRepos
-   git clone https://github.com/linuxury/dotfiles.git
-   cd dotfiles
+   mkdir -p ~/Documents/Dotfiles/
+   sudo git clone https://github.com/linuxury/dotfiles.git ~/Documents/Dotfiles
+   sudo chown -R your_username:your_username ~/Documents/Dotfiles
    ```
    > **Warning**: Verify repository `curl -I https://github.com/linuxury/dotfiles`.
 
 2. **Create symlinks**:
-     ```bash
-     ln -s ~/Documents/GitRepos/dotfiles/bazaar-config ~/.config
-     ln -s ~/Documents/GitRepos/dotfiles/dunst ~/.config
-     ln -s ~/Documents/GitRepos/dotfiles/fastfetch ~/.config
-     ln -s ~/Documents/GitRepos/dotfiles/fish ~/.config
-     ln -s ~/Documents/GitRepos/dotfiles/ghostty ~/.config
-     ln -s ~/Documents/GitRepos/dotfiles/helix ~/.config
-     ln -s ~/Documents/GitRepos/dotfiles/Kvantum ~/.config
-     ln -s ~/Documents/GitRepos/dotfiles/MangoHud ~/.config
-     ln -s ~/Documents/GitRepos/dotfiles/starship ~/.config
-     ln -s ~/Documents/GitRepos/dotfiles/topgrade.d ~/.config
-     ln -s ~/Documents/GitRepos/dotfiles/zed ~/.config     
-     rsync -a --ignore-existing ~/Documents/GitRepos/dotfiles/Pictures ~/
-     sudo ln -s ~/Documents/GitRepos/dotfiles/nano/.nanorc /root/ ~/
-     ```
-   Verify:
    ```bash
-   ls -l ~/.config | grep dotfiles
+   # Create symlinks for each application
+   ln -s ~/Documents/Dotfiles/dunst ~/.config/dunst
+   ln -s ~/Documents/Dotfiles/fastfetch ~/.config/fastfetch
+   ln -s ~/Documents/Dotfiles/fish ~/.config/fish
+   ln -s ~/Documents/Dotfiles/ghostty ~/.config/ghostty
+   ln -s ~/Documents/Dotfiles/helix ~/.config/helix
+   ln -s ~/Documents/Dotfiles/Kvantum ~/.config/Kvantum
+   ln -s ~/Documents/Dotfiles/MangoHud ~/.config/MangoHud
+   ln -s ~/Documents/Dotfiles/starship ~/.config/starship
+   ln -s ~/Documents/Dotfiles/topgrade ~/.config/topgrade.d
+   ln -s ~/Documents/Dotfiles/zed ~/.config/zed
+   ln -s ~/Documents/Dotfiles/nano/.nanorc ~/.nanorc
+   sudo ln -s ~/Documents/Dotfiles/nano/.nanorc /root/.nanorc
+   rsync -a --ignore-existing ~/Documents/Dotfiles/Pictures ~/   
    ```
-   <img width="1149" height="785" alt="image" src="https://github.com/user-attachments/assets/ded32d26-81b8-4844-be3a-5fd11544c6e8" />
+   <img width="1190" height="894" alt="image" src="https://github.com/user-attachments/assets/51699038-8f7f-4c6d-9380-a2b4cc05b4f3" />
 
 
 ## G. Optional Customizations
