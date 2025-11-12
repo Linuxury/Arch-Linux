@@ -319,7 +319,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
            lib32-gtk3 lib32-libjpeg-turbo lib32-libva lib32-mpg123 lib32-ocl-icd \
            lib32-opencl-icd-loader lib32-openal firefox-ublock-origin \
            papers phonon-qt6-gstreamer-git mission-center kdepim-addons \
-           merkuro dunst nano-syntax-highlighting bazaar xfsprogs discord \
+           merkuro dunst nano-syntax-highlighting xfsprogs discord \
            gst-libav gst-plugins-base gst-plugins-good gst-plugins-bad \
            gst-plugins-ugly obs-studio mcpelauncher-ui-git mcpelauncher-linux-git \
             --needed
@@ -338,7 +338,7 @@ Install gaming, productivity, and KDE customization packages, including Chaotic-
            ```bash
             paru -S fastfetch gnome-disk-utility power-profiles-daemon reflector rsync \
                     timeshift ufw topgrade mission-center pacman-contrib pamac \
-                    plasma6-applets-arch-update-notifier dunst bazaar xfsprogs --needed
+                    plasma6-applets-arch-update-notifier dunst xfsprogs --needed
            ```
 
       - **Shell Sorcerers**<br />
