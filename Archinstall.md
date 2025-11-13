@@ -1,4 +1,4 @@
-# Archinstall: A Beginner-Friendly Installation Guide for Arch Linux
+# A Beginner-Friendly Installation Guide for Arch Linux
 
 This guide will walk you through the entire process of installing Arch Linux using the `archinstall` script. It's designed for users who have little to no prior knowledge of Linux, ensuring a smooth and understandable installation experience.
 
