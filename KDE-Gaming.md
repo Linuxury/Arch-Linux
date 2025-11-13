@@ -1,4 +1,4 @@
-# KDE Plasma Gaming Setup Guide (work in progress)
+# KDE Plasma Gaming Setup Guide (in progress)
 
 This guide provides comprehensive steps for configuring an *existing* Arch Linux installation with KDE Plasma, specifically optimized for gaming. It covers essential post-installation setup, gaming tools, and various system customizations. Commands are grouped for easy copying, with detailed explanations for beginners. It's recommended to run `sudo pacman -Syu` before starting any major configuration.
 
