@@ -62,7 +62,7 @@ While `archinstall` can often configure networking, it's a good idea to ensure y
 It's always a good idea to ensure you're using the latest version of `archinstall`, as the live ISO might have an older version.
 
 ```/dev/null/update_archinstall.sh#L1-1
-# pacman -Sy archinstall
+pacman -Sy archinstall
 ```
 A partial upgrade on the live ISO is usually fine, but a complete system update is preferable if memory allows.
 
@@ -70,7 +70,7 @@ A partial upgrade on the live ISO is usually fine, but a complete system update 
 Now, you're ready to start the guided installer.
 
 ```/dev/null/run_archinstall.sh#L1-1
-# archinstall
+archinstall
 ```
 
 The `archinstall` script will launch and guide you through a series of questions. Here's a breakdown of the typical steps and what to do, in the order you will encounter them:
