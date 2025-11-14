@@ -1011,3 +1011,22 @@ To confirm your current session is running Wayland, open a terminal and execute:
 
 After these configurations, your Steam games should be optimized for a better gaming experience.
 
+## Troubleshooting
+
+This section provides guidance for resolving common issues that may arise during or after the setup process.
+
+*   **Problem: System fails to boot after configuring systemd-boot:**
+    *   **Solution:** Ensure the `PARTUUID` in your boot entry file is correct. Double-check that the boot entry file is named correctly (e.g., `arch-zen.conf`) and that the `default` line in `/boot/loader/loader.conf` matches the filename.
+
+*   **Problem: Bluetooth devices are not detected:**
+    *   **Solution:** Verify that the Bluetooth service is enabled and running (`systemctl status bluetooth.service`). Ensure your Bluetooth adapter is not disabled in your system's BIOS or UEFI settings.
+
+*   **Problem: Dunst notifications are not appearing:**
+    *   **Solution:** Confirm that Plasma's notification service is disabled and that Dunst is properly autostarting. Test with the `notify-send` command.
+
+*   **Problem: Steam games are not performing as expected:**
+    *   **Solution:** Verify that you have selected `proton-ge-custom` as the compatibility tool in Steam settings. Experiment with different launch options.
+
+## Conclusion
+
+This guide has provided a comprehensive walkthrough of setting up and configuring Arch Linux with KDE Plasma, focusing on essential aspects such as package management, system services, desktop customization, and gaming optimization. By following these steps, you should have a well-configured and optimized Arch Linux system tailored to your needs. Remember to consult the Arch Wiki and other resources for further customization and troubleshooting.
