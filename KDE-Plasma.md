@@ -950,7 +950,7 @@ This section provides custom filters for uBlock Origin, specifically designed to
 
 This section guides you through configuring Steam to achieve optimal gaming performance, leveraging `proton-ge-custom` and custom launch options. `proton-ge-custom` (which was installed in the [Gaming sub-section](#gaming)) is crucial for enabling Windows games on Steam and Lutris. Custom launch options further allow you to maximize performance and enable advanced features.
 
-#### Setting `proton-ge-custom` as the default compatibility tool
+Setting `proton-ge-custom` as the default compatibility tool
 
 *   Open Steam.
 
