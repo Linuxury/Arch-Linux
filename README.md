@@ -48,4 +48,4 @@ Welcome to the `Arch-Linux` repository! This project provides comprehensive, ste
 
 ---
 
-We hope these guides empower you to enjoy the flexibility and power of Arch Linux!
+I hope these guides empower you to enjoy the flexibility and power of Arch Linux!
