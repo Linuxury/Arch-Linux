@@ -444,3 +444,250 @@ Flatpak is a universal application packaging and distribution framework. It allo
     *   `sudo pacman -S flatpak --needed`: Installs the Flatpak package manager.
     *   `flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`: Adds the Flathub repository, a popular source for Flatpak applications. The `--if-not-exists` flag prevents adding the repository multiple times.
     *   `flatpak remote-list`: Verifies that Flatpak is properly installed and configured by listing the configured remotes, including "flathub".
+    
+    
+## Enabling TRIM for SSD
+
+TRIM is a command that helps solid-state drives (SSDs) maintain their performance over time. It tells the SSD which data blocks are no longer in use and can be erased, which improves write speeds and extends the lifespan of the drive.
+
+1.  **Enable TRIM:**
+
+    Run the following commands to enable and verify TRIM:
+
+    ```bash
+    sudo systemctl enable fstrim.timer
+    sudo systemctl start fstrim.timer
+    systemctl status fstrim.timer
+    ```
+
+    *   `sudo systemctl enable fstrim.timer`: Enables the `fstrim.timer` service to run automatically at boot.
+    *   `sudo systemctl start fstrim.timer`: Starts the `fstrim.timer` service immediately.
+    *   `systemctl status fstrim.timer`: Checks the status of the `fstrim.timer` service to ensure it is active and running.
+
+## Enabling Bluetooth
+
+These steps enable Bluetooth support.
+
+1.  **Enable Bluetooth:**
+
+    Run the following commands to enable and verify Bluetooth:
+
+    ```bash
+    sudo systemctl enable bluetooth.service
+    sudo systemctl start bluetooth.service
+    systemctl status bluetooth.service
+    ```
+
+    *   `sudo systemctl enable bluetooth.service`: Enables the `bluetooth.service` to run automatically at boot.
+    *   `sudo systemctl start bluetooth.service`: Starts the `bluetooth.service` immediately.
+    *   `systemctl status bluetooth.service`: Checks the status of the `bluetooth.service` to ensure it is active and running.
+
+## Enabling NetworkManager
+
+NetworkManager is a network management tool that simplifies connecting to wired and wireless networks.
+
+1.  **Enable NetworkManager:**
+
+    ```bash
+    sudo systemctl enable NetworkManager.service
+    sudo systemctl start NetworkManager.service
+    systemctl status NetworkManager.service
+    ```
+
+    *   `sudo systemctl enable NetworkManager.service`: Enables the `NetworkManager.service` to run automatically at boot.
+    *   `sudo systemctl start NetworkManager.service`: Starts the `NetworkManager.service` immediately.
+    *   `systemctl status NetworkManager.service`: Checks the status of the `NetworkManager.service` to ensure it is active and running.
+
+## Setting up the Firewall
+
+This section configures the Uncomplicated Firewall (UFW) to protect your system by allowing only necessary network connections.
+
+1.  **Configure UFW:**
+
+    Run the following commands to set up UFW with basic rules:
+
+    ```bash
+    sudo ufw default deny incoming
+    sudo ufw default allow outgoing
+    sudo ufw allow ssh
+    sudo ufw allow http
+    sudo ufw allow https
+    sudo ufw enable
+    ```
+
+    *   `sudo ufw default deny incoming`: Denies all incoming connections by default.
+    *   `sudo ufw default allow outgoing`: Allows all outgoing connections by default.
+    *   `sudo ufw allow ssh`: Allows incoming SSH connections (port 22 by default).
+    *   `sudo ufw allow http`: Allows incoming HTTP connections (port 80).
+    *   `sudo ufw allow https`: Allows incoming HTTPS connections (port 443).
+    *   `sudo ufw enable`: Enables the UFW firewall.
+
+2.  **Optional: Allow specified ports and services for Steam (if used):**
+
+    Run the following commands to allow incoming connections for Steam features (e.g., game streaming, voice chat) through your network:
+
+    ```bash
+    sudo ufw allow 53/tcp
+    sudo ufw allow 8080/tcp
+    sudo ufw allow 32000/tcp
+    sudo ufw allow 8081/tcp
+    sudo ufw allow 2020/tcp
+    sudo ufw allow 1716/tcp
+    sudo ufw allow 27060/tcp
+    sudo ufw allow 33220/tcp
+    sudo ufw allow 44101/tcp
+    sudo ufw allow 37653/tcp
+    sudo ufw allow 47317/tcp
+    sudo ufw allow 5355/tcp
+    sudo ufw allow 53/udp
+    sudo ufw allow 27036/udp
+    sudo ufw allow 50547/udp
+    sudo ufw allow 59838/udp
+    sudo ufw allow 5353/udp
+    sudo ufw allow 5355/udp
+    sudo ufw allow 1714:1764/udp
+    ```
+
+3.  **Show the status of UFW:**
+
+    Run the following command to confirm the rules have been added:
+
+    ```bash
+    sudo ufw status verbose
+    ```
+
+    This command will display the status of UFW and the list of allowed and denied connections.
+
+## Implementing Dotfiles
+
+This section explains how to implement your dotfiles.
+
+1.  **Clone the dotfiles repository:**
+
+    Open a terminal and clone the repository directly into your Documents directory as a folder named `Dotfiles`:
+
+    ```bash
+    mkdir -p ~/Documents/Dotfiles/
+    git clone https://github.com/linuxury/dotfiles.git ~/Documents/Dotfiles
+    ```
+
+2.  **Set Permissions:**
+
+    After cloning, it's crucial to ensure that your user owns the `Dotfiles` directory to prevent permission errors. Run the following command:
+
+    ```bash
+    sudo chown -R $USER:$USER ~/Documents/Dotfiles
+    ```
+
+3.  **Setting Up Symlinks:**
+
+    After cloning, create symlinks for the dotfiles. Here’s a quick summary of the commands you would need to run:
+
+    ```bash
+    # Create symlinks for each application
+    ln -s ~/Documents/Dotfiles/dunst ~/.config/dunst
+    ln -s ~/Documents/Dotfiles/fastfetch ~/.config/fastfetch
+    ln -s ~/Documents/Dotfiles/fish ~/.config/fish
+    ln -s ~/Documents/Dotfiles/ghostty ~/.config/ghostty
+    ln -s ~/Documents/Dotfiles/helix ~/.config/helix
+    ln -s ~/Documents/Dotfiles/Kvantum ~/.config/Kvantum
+    ln -s ~/Documents/Dotfiles/MangoHud ~/.config/MangoHud
+    ln -s ~/Documents/Dotfiles/starship ~/.config/starship
+    ln -s ~/Documents/Dotfiles/topgrade ~/.config/topgrade.d
+    ln -s ~/Documents/Dotfiles/zed ~/.config/zed
+    ln -s ~/Documents/Dotfiles/nano/.nanorc ~/.nanorc
+    sudo ln -s ~/Documents/Dotfiles/nano/.nanorc /root/.nanorc
+    rsync -a --ignore-existing ~/Documents/Dotfiles/Pictures ~/
+    ```
+
+    **Important Notes:**
+
+    *   Adjust the `ln -s` commands to match the specific files and directories in your dotfiles repository. The example above is a template.
+    *   The `rsync` command is used to copy the `Pictures` directory from the dotfiles repository to your home directory, ignoring any existing files. This is specific to the example repository and may not be applicable to all dotfiles repositories.
+    *   The `sudo ln -s ~/Documents/Dotfiles/nano/.nanorc /root/.nanorc` command requires root privileges and is used to create a symlink to the `.nanorc` file in the root user's home directory.
+
+4.  **Apply changes:**
+
+    Some changes may require you to restart your terminal or source the relevant configuration file (e.g., `.bashrc`, `.zshrc`).
+
+Now your system should be configured with the dotfiles.
+
+## Configuring SDDM
+
+This section explains how to configure SDDM, the Simple Desktop Display Manager used by KDE Plasma.
+
+1.  **Create the configuration directory:**
+
+    Create the `/etc/sddm.conf.d` directory if it doesn't already exist:
+
+    ```bash
+    sudo mkdir -p /etc/sddm.conf.d
+    ```
+
+2.  **Create the configuration file and add settings:**
+
+    Use the following commands to create the `kde_settings.conf` file and add the configuration settings:
+
+    ```bash
+    echo "[General]" | sudo tee /etc/sddm.conf.d/kde_settings.conf
+    echo "Numlock=on" | sudo tee -a /etc/sddm.conf.d/kde_settings.conf
+    echo "HaltCommand=/usr/lib/systemd/systemd-shutdown poweroff" | sudo tee -a /etc/sddm.conf.d/kde_settings.conf
+    echo "RebootCommand=/usr/lib/systemd/systemd-shutdown reboot" | sudo tee -a /etc/sddm.conf.d/kde_settings.conf
+    echo "[Theme]" | sudo tee -a /etc/sddm.conf.d/kde_settings.conf
+    echo "Current=breeze" | sudo tee -a /etc/sddm.conf.d/kde_settings.conf
+    ```
+
+    *   `echo "[General]" | sudo tee /etc/sddm.conf.d/kde_settings.conf`: Creates the `kde_settings.conf` file and adds the `[General]` section header.
+    *   `echo "Numlock=on" | sudo tee -a /etc/sddm.conf.d/kde_settings.conf`: Enables NumLock at startup.
+    *   `echo "HaltCommand=/usr/lib/systemd/systemd-shutdown poweroff" | sudo tee -a /etc/sddm.conf.d/kde_settings.conf`: Sets the command to power off the system.
+    *   `echo "RebootCommand=/usr/lib/systemd/systemd-shutdown reboot" | sudo tee -a /etc/sddm.conf.d/kde_settings.conf`: Sets the command to reboot the system.
+    *   `echo "[Theme]" | sudo tee -a /etc/sddm.conf.d/kde_settings.conf`: Adds the `[Theme]` section header.
+    *   `echo "Current=breeze" | sudo tee -a /etc/sddm.conf.d/kde_settings.conf`: Sets the current theme to "breeze".
+
+Now SDDM should be configured with the specified settings.
+
+## Configuring Fish Shell
+
+This section explains how to set Fish as your default shell.
+
+1.  **Configure Fish as the default shell:**
+
+    Run the following commands to verify Fish, add it to the list of valid shells, and set it as your default shell:
+
+    ```bash
+    which fish  # Verify Fish
+    echo /usr/bin/fish | sudo tee -a /etc/shells
+    chsh -s /usr/bin/fish
+    ```
+
+    *   `which fish`: Verifies that Fish is installed and shows its path.
+    *   `echo /usr/bin/fish | sudo tee -a /etc/shells`: Adds Fish to the list of valid shells in `/etc/shells`. This is required for `chsh` to work correctly.
+    *   `chsh -s /usr/bin/fish`: Changes your default shell to Fish. You will be prompted for your password.
+
+2.  **Verify the change:**
+
+    Log out and log back in, or start a new terminal session. Your new terminal should now be using Fish. You can verify this by running:
+
+    ```bash
+    echo $SHELL
+    ```
+
+    The output should be `/usr/bin/fish`.
+
+## Enabling Global Menu (Optional)
+
+The global menu places the application menu (File, Edit, View, etc.) at the top of the screen, rather than within the application window itself. Some users prefer this style of interface.
+
+1.  **Configure Global Menu:**
+
+    Run the following commands to install the necessary packages and restart the Plasma shell:
+
+    ```bash
+    sudo pacman -S appmenu-gtk-module libdbusmenu-glib --needed
+    kquitapp5 plasmashell && kstart5 plasmashell
+    ```
+
+    *   `sudo pacman -S appmenu-gtk-module libdbusmenu-glib --needed`: Installs the required packages for the global menu functionality.
+    *   `kquitapp5 plasmashell && kstart5 plasmashell`: Quits and then restarts the Plasma shell to apply the changes without needing a full logout/login.
+
+After these steps, the global menu should be enabled. If you don't like it, you can uninstall the packages to revert to the default behavior.
