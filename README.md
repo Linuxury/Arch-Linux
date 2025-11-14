@@ -20,7 +20,7 @@ Welcome to the `Arch-Linux` repository! This project aims to provide comprehensi
 *   ### KDE Plasma Gaming Setup
     Dive into setting up a powerful KDE Plasma desktop environment optimized for gaming on Arch Linux. This guide covers essential configurations, driver installations, and tweaks to get you gaming efficiently.
     
-    [Go to the KDE Plasma Gaming Setup Guide](KDE-Gaming.md)
+    [Go to the KDE Plasma Gaming Setup Guide](KDE-Plasma.md)
 
 ---
 
