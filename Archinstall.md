@@ -319,7 +319,7 @@ This is where you select the general software stack for your new Arch Linux syst
 
     **Example (for AMD CPU, with KDE profile):**
     ```/dev/null/example_packages.sh#L1-1
-    firefox amd-ucode
+    /firefox /amd-ucode
     ```
     (Remember to choose either `amd-ucode` or `intel-ucode`, not both, and only add packages not already covered by your chosen profile.)
 
