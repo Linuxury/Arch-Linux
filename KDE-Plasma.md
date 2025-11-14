@@ -691,3 +691,89 @@ The global menu places the application menu (File, Edit, View, etc.) at the top 
     *   `kquitapp5 plasmashell && kstart5 plasmashell`: Quits and then restarts the Plasma shell to apply the changes without needing a full logout/login.
 
 After these steps, the global menu should be enabled. If you don't like it, you can uninstall the packages to revert to the default behavior.
+
+## Configuring the Bootloader for a Fast and Silent Boot
+
+`systemd-boot` is a simple UEFI boot manager. This section guides you through optimizing your `systemd-boot` configuration to achieve a faster and quieter boot experience, displaying messages only if errors or issues occur.
+
+1.  **Identify your root filesystem's PARTUUID:**
+
+    To correctly configure your boot entry, you need the `PARTUUID` of your root filesystem. You can find this using the `blkid` command. Replace `/dev/sdXn` with your actual root partition (e.g., `/dev/sda2`, `/dev/nvme0n1p2`).
+
+    ```bash
+    blkid -s PARTUUID -o value /dev/sdXn
+    ```
+
+    Alternatively, you can list all block devices and their PARTUUIDs:
+
+    ```bash
+    ls -l /dev/disk/by-partuuid/
+    ```
+
+    **Make a note of the `PARTUUID` for your root partition**, as you will need it in the next step.
+
+2.  **Configure `loader.conf` for silent boot:**
+
+    This file controls the global behavior of `systemd-boot`, including the timeout for the boot menu. We will set the timeout to `0` for an immediate boot.
+
+    Open the `loader.conf` file using `nano`:
+
+    ```bash
+    sudo nano /boot/loader/loader.conf
+    ```
+
+    Ensure the file contains the following lines. **Specifically, change the `timeout` value to `0` and add `console-mode max` and `editor no` if they are not present.** Adjust `default` to match your preferred boot entry filename (e.g., `arch-zen.conf` for the `linux-zen` kernel).
+
+    ```plaintext
+    default  arch-zen.conf
+    timeout  0
+    console-mode max
+    editor   no
+    ```
+
+    *   `default arch-zen.conf`: Sets the default boot entry.
+    *   `timeout 0`: Sets the boot menu timeout to 0 seconds, meaning it will boot directly into the default entry without waiting for user input.
+    *   `console-mode max`: Uses the highest available console resolution.
+    *   `editor no`: Disables the boot entry editor in the boot menu.
+
+    Save the changes by pressing `Ctrl+O`, then `Enter`, and exit `nano` by pressing `Ctrl+X`.
+
+3.  **Create or edit your boot entry file for silent kernel output:**
+
+    Boot entries for `systemd-boot` are typically located in `/boot/loader/entries/`. The exact filename depends on your kernel, for example, `arch.conf` for the standard kernel or `arch-zen.conf` for the `linux-zen` kernel.
+
+    If you don't have a boot entry yet, you can create one. If one exists, open it. Assuming you are using the `linux-zen` kernel:
+
+    ```bash
+    sudo nano /boot/loader/entries/arch-zen.conf
+    ```
+
+    Ensure your boot entry file looks similar to the example below. **The key change is to add the `quiet splash loglevel=3 rd.systemd.show_status=false rd.udev.log_priority=3` parameters to the `options` line.**
+
+    **Remember to replace `YOUR_ROOT_PARTUUID` with the actual `PARTUUID` you noted in step 1.**
+
+    ```plaintext
+    title   Arch Linux (linux-zen)
+    linux   /vmlinuz-linux-zen
+    initrd  /initramfs-linux-zen.img
+    options root=PARTUUID=YOUR_ROOT_PARTUUID zswap.enabled=0 rootflags=subvol=@ rw rootfstype=btrfs quiet splash loglevel=3 rd.systemd.show_status=false rd.udev.log_priority=3
+    ```
+
+    *   `title Arch Linux (linux-zen)`: The name displayed in the `systemd-boot` menu.
+    *   `linux /vmlinuz-linux-zen`: Path to the Linux kernel image.
+    *   `initrd /initramfs-linux-zen.img`: Path to the initial ramdisk image.
+    *   `options ...`: Kernel parameters.
+        *   `root=PARTUUID=YOUR_ROOT_PARTUUID`: Tells the kernel which partition is the root filesystem.
+        *   `zswap.enabled=0`: Disables zswap.
+        *   `rootflags=subvol=@`: Specifies the Btrfs subvolume.
+        *   `rw`: Mounts the root filesystem as read-write.
+        *   `rootfstype=btrfs`: Specifies the filesystem type.
+        *   `quiet`: Suppresses most kernel messages during boot.
+        *   `splash`: (Optional) Can be used with a graphical boot splash.
+        *   `loglevel=3`: Sets the kernel log level to show only error messages.
+        *   `rd.systemd.show_status=false`: Disables showing status messages from `systemd` during early boot.
+        *   `rd.udev.log_priority=3`: Sets `udev` log priority to only show errors.
+
+    Save the changes by pressing `Ctrl+O`, then `Enter`, and exit `nano` by pressing `Ctrl+X`.
+
+After completing these steps, your `systemd-boot` should be configured for a fast and silent boot, showing output only in case of errors. You will need to **reboot your system** for these changes to take effect.
