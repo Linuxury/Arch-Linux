@@ -989,7 +989,7 @@ This section guides you through configuring Steam to achieve optimal gaming perf
 
 4.  **Verify Wayland session (optional):**
 
-To confirm your current session is running Wayland, open a terminal and execute:
+    To confirm your current session is running Wayland, open a terminal and execute:
 
     ```bash
     echo $XDG_SESSION_TYPE  # This command should output "wayland"
