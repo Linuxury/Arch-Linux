@@ -1003,7 +1003,7 @@ This section guides you through configuring Steam to achieve optimal gaming perf
     ls ~/.local/share/Steam/compatibilitytools.d  # This should list your Proton-GE-Custom version
     ```
 
-After these configurations, your Steam games should be optimized for a better gaming experience.
+    After these configurations, your Steam games should be optimized for a better gaming experience.
 
 ## Troubleshooting
 
