@@ -777,3 +777,237 @@ After these steps, the global menu should be enabled. If you don't like it, you 
     Save the changes by pressing `Ctrl+O`, then `Enter`, and exit `nano` by pressing `Ctrl+X`.
 
 After completing these steps, your `systemd-boot` should be configured for a fast and silent boot, showing output only in case of errors. You will need to **reboot your system** for these changes to take effect.
+
+## Arch Update Counter Configuration
+
+This section guides you through configuring the Arch Update Notifier applet for Plasma, allowing you to customize its behavior, update commands, and visual appearance.
+
+1.  **General Settings:**
+    *   **Change the option for update to**: `5 minute(s)`
+    *   **Select the option for**: `Retry if error`
+
+2.  **Search & Count Settings:**
+    *   **Count ARCH command**: `checkupdates | wc -l`
+    *   **Count AUR command**: `paru -Qua | wc -l`
+    *   **List ARCH command**: `checkupdates`
+    *   **List AUR command**: `paru -Qua`
+
+3.  **Update Package Settings:**
+    *   **Update command**: `topgrade`
+    *   **Update one command**: `paru -Sy`
+    *   **Terminal cmd for update action**: `ghostty -e`
+    *   **Terminal cmd for update with do not close**: `ghostty --noclose -e`
+
+4.  **Popup Color Settings:**
+    *   **Name**: White `#D8DEE9`
+    *   **Source**: Teal `#88C0D0`
+    *   **From Version**: Light Gray `#E5E9F0`
+    *   **Separator**: Green `#A3BE8C`
+    *   **To Version**: Bright white `#ECEFF4`
+
+## Dunst Notification Configuration
+
+This section explains how to configure Dunst, a lightweight and highly customizable notification daemon, to work effectively with KDE Plasma.
+
+1.  **Disable Plasma's Notification Service:**
+
+    To ensure Dunst handles notifications instead of Plasma's default service, disable Plasma's notification service.
+
+    *   Open `System Settings > Startup and Shutdown > Background Services` (or search for "Notifications" in the settings).
+    *   Under System Services, find "Notifications" and set it to `Disabled`. This prevents Plasma from claiming the D-Bus notification service.
+    *   Alternatively, for a more permanent (but hackier) approach, rename Plasma's D-Bus service file to prevent it from loading:
+        ```bash
+        sudo mv /usr/share/dbus-1/services/org.kde.plasma.Notifications.service /usr/share/dbus-1/services/org.kde.plasma.Notifications.service.disabled
+        ```
+        > To revert, rename it back. Path may vary slightly by distro; check `/usr/share/dbus-1/services/`
+
+2.  **Autostart Dunst:**
+
+    Ensure Dunst starts automatically when you log in.
+
+    *   In `System Settings > Startup and Shutdown > Autostart`, click `Add > Add Application` and select `dunst` (just type `dunst`, it will work).
+    *   Alternatively, add it to your `~/.xinitrc` or `~/.xprofile` if you use a custom session, or use a systemd user service for better reliability:
+        ```bash
+        mkdir -p ~/.config/systemd/user
+        echo '[Unit]
+        Description=Dunst
+        [Service]
+        ExecStart=/usr/bin/dunst
+        Restart=always
+        [Install]
+        WantedBy=default.target' > ~/.config/systemd/user/dunst.service
+        systemctl --user enable --now dunst.service
+        ```
+
+3.  **Restart Plasma:**
+
+    Log out and back in, or run the following command in a terminal to reload the shell without logging out. This ensures the D-Bus service switches to Dunst.
+
+    ```bash
+    kquitapp5 plasmashell && kstart5 plasmashell
+    ```
+
+    > You could also reload Dunst specifically with:
+    ```bash
+    killall dunst && dunst &
+    ```
+
+4.  **Test Dunst Notifications:**
+
+    Send some test notifications to confirm Dunst is working correctly:
+
+    ```bash
+    notify-send --urgency=low --icon=firefox "Firefox Test" "Testing Firefox icon"
+    notify-send --urgency=normal --icon=dialog-information "Info Test" "Testing dialog-information icon"
+    notify-send --urgency=normal --icon=update "Update Test" "Testing update icon"
+    notify-send --urgency=normal --icon=mail "Mail Test" "Testing mail icon"
+    notify-send --urgency=critical --icon=dialog-error "Error Test" "Testing dialog-error icon"
+    notify-send --urgency=normal --icon=terminal "Terminal Test" "Testing terminal icon"
+    notify-send --urgency=normal --icon=document "Document Test" "Testing document icon"
+    ```
+
+## uBlock Origin Extension
+
+This section provides custom filters for uBlock Origin, specifically designed to hide YouTube Shorts.
+
+1.  **Add Custom Filters in Firefox:**
+
+    *   Go into your `Firefox` browser and navigate to the `uBlock Origin` extension settings.
+    *   Enter into `Settings`, then select the `My filters` tab.
+    *   Copy the code below and hit `Apply Changes` to apply this filter. This will remove all `Shorts` from `Youtube`.
+
+    ```plaintext
+    ! Title: Hide YouTube Shorts
+    ! Description: Hide all traces of YouTube shorts videos on YouTube
+    ! Version: 1.8.0
+    ! Last modified: 2023-01-08 20:02
+    ! Expires: 2 weeks (update frequency)
+    ! Homepage: https://github.com/gijsdev/ublock-hide-yt-shorts
+    ! License: https://github.com/gijsdev/ublock-hide-yt-shorts/blob/master/LICENSE.md
+
+    ! Hide all videos containing the phrase "#shorts"
+    youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#shorts))
+    youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#Shorts))
+    youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#short))
+    youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#Short))
+
+    ! Hide all videos with the shorts indicator on the thumbnail
+    youtube.com##ytd-grid-video-renderer:has([overlay-style="SHORTS"])
+    youtube.com##ytd-rich-item-renderer:has([overlay-style="SHORTS"])
+    youtube.com##ytd-video-renderer:has([overlay-style="SHORTS"])
+    youtube.com##ytd-item-section-renderer.ytd-section-list-renderer[page-subtype="subscriptions"]:has(ytd-video-renderer:has([overlay-style="SHORTS"]))
+
+    ! Hide shorts button in sidebar
+    youtube.com##ytd-guide-entry-renderer:has-text(Shorts)
+    youtube.com##ytd-mini-guide-entry-renderer:has-text(Shorts)
+
+    ! Hide shorts section on homepage
+    youtube.com##ytd-rich-section-renderer:has(#rich-shelf-header:has-text(Shorts))
+    youtube.com##ytd-reel-shelf-renderer:has(.ytd-reel-shelf-renderer:has-text(Shorts))
+
+    ! Hide shorts tab on channel pages
+    ! Old style
+    youtube.com##tp-yt-paper-tab:has(.tp-yt-paper-tab:has-text(Shorts))
+    ! New style (2023-10)
+    youtube.com##yt-tab-shape:has-text(/^Shorts$/)
+
+    ! Hide shorts in video descriptions
+    youtube.com##ytd-reel-shelf-renderer.ytd-structured-description-content-renderer:has-text("Shorts remixing this video")
+
+    ! Remove empty spaces in grid
+    youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
+
+
+    !!! MOBILE !!!
+
+    ! Hide all videos in home feed containing the phrase "#shorts"
+    m.youtube.com##ytm-rich-item-renderer:has(#video-title:has-text(#shorts))
+    m.youtube.com##ytm-rich-item-renderer:has(#video-title:has-text(#Shorts))
+    m.youtube.com##ytm-rich-item-renderer:has(#video-title:has-text(#short))
+    m.youtube.com##ytm-rich-item-renderer:has(#video-title:has-text(#Short))
+
+    ! Hide all videos in subscription feed containing the phrase "#shorts"
+    m.youtube.com##ytm-item-section-renderer:has(#video-title:has-text(#shorts))
+    m.youtube.com##ytm-item-section-renderer:has(#video-title:has-text(#Shorts))
+    m.youtube.com##ytm-item-section-renderer:has(#video-title:has-text(#short))
+    m.youtube.com##ytm-item-section-renderer:has(#video-title:has-text(#Short))
+
+    ! Hide shorts button in the bottom navigation bar
+    m.youtube.com##ytm-pivot-bar-item-renderer:has(.pivot-shorts)
+
+    ! Hide all videos with the shorts indicator on the thumbnail
+    m.youtube.com##ytm-video-with-context-renderer:has([data-style="SHORTS"])
+
+    ! Hide shorts sections
+    m.youtube.com##ytm-rich-section-renderer:has(ytm-reel-shelf-renderer:has(.reel-shelf-title-wrapper:has-text(Shorts)))
+    m.youtube.com##ytm-reel-shelf-renderer.item:has(.reel-shelf-title-wrapper:has-text(Shorts))
+
+    ! Hide shorts tab on channel pages
+    m.youtube.com##.single-column-browse-results-tabs>a:has-text(Shorts)
+    ```
+
+## Optimize Steam for Gaming
+
+This section guides you through configuring Steam to achieve optimal gaming performance, leveraging `proton-ge-custom` and custom launch options. `proton-ge-custom` (which was installed in the [Gaming sub-section](#gaming)) is crucial for enabling Windows games on Steam and Lutris. Custom launch options further allow you to maximize performance and enable advanced features.
+
+#### Setting `proton-ge-custom` as the default compatibility tool
+
+*   Open Steam.
+
+`proton-ge-custom` (which was installed in the [Gaming sub-section](#gaming)) is crucial for enabling Windows games on Steam and Lutris. Custom launch options further allow you to maximize performance and enable advanced features.
+
+1.  **Set `proton-ge-custom` as the default compatibility tool:**
+    *   Open Steam.
+    *   Navigate to `Settings > Compatibility (Steam Play)`.
+    *   Enable "Steam Play for all other titles" and select your installed `Proton-GE` version from the dropdown menu.
+    *   If you are also using Lutris, open Lutris and set `proton-ge-custom` as the runner for your games within their individual game settings.
+
+2.  **Configure Steam launch options for individual games:**
+    For each game you want to optimize:
+    *   Right-click the game in your Steam library.
+    *   Select `Properties`.
+    *   In the `General` tab, locate the `Launch Options` field.
+    *   Add the following recommended parameters:
+
+    ```plaintext
+    PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 PROTON_FSR4_UPGRADE=1 gamemoderun %command%
+    ```
+
+    *   **Explanation of parameters**:
+        *   `PROTON_ENABLE_WAYLAND=1`: Enables Wayland integration, which can improve scaling and High Dynamic Range (HDR) support.
+        *   `PROTON_ENABLE_HDR=1`: Activates HDR output. Your monitor must support HDR for this to have an effect.
+        *   `SteamDeck=1`: Applies optimizations intended for Steam Deck, which can benefit desktop Linux users.
+        *   `PROTON_FSR4_UPGRADE=1`: Enables experimental FidelityFX Super Resolution 4.0 upscaling.
+        *   `PROTON_DLSS_UPGRADE=1`: Enables experimental Deep Learning Super Sampling (DLSS) for NVIDIA GPUs.
+        *   `gamemoderun`: Utilizes `gamemode` to dynamically optimize CPU and GPU performance when the game is running.
+        *   `mangohud`: Launches MangoHud, an in-game overlay to monitor FPS, GPU usage, temperatures, and more.
+
+    > **Note**: For more detailed information on Wayland-specific flags and advanced options, please refer to: [Etaash-mathamsetty guide](https://github.com/Etaash-mathamsetty/Proton/blob/em-10/docs/EM-ADDITIONS.md)
+
+3.  **Alternative launch options for beginners:**
+    If you encounter instability or issues with the experimental flags, you can use a simpler set of launch options:
+
+    ```plaintext
+    PROTON_ENABLE_WAYLAND=1 gamemoderun mangohud %command%
+    ```
+
+    > **Warning**: Experimental flags (like `PROTON_FSR4_UPGRADE` and `PROTON_DLSS_UPGRADE`) may cause instability or unexpected behavior in some games. If you experience problems, try running the game without these flags.
+
+4.  **Verify Wayland session (optional):**
+
+To confirm your current session is running Wayland, open a terminal and execute:
+
+    ```bash
+    echo $XDG_SESSION_TYPE  # This command should output "wayland"
+    ```
+
+5.  **Verify `proton-ge-custom` installation:**
+    
+    To confirm `proton-ge-custom` is properly recognized by Steam, you can check its installation directory:
+
+    ```bash
+    ls ~/.local/share/Steam/compatibilitytools.d  # This should list your Proton-GE-Custom version
+    ```
+
+After these configurations, your Steam games should be optimized for a better gaming experience.
+
