@@ -251,7 +251,7 @@ Mirrors are servers that host Arch Linux packages. Using mirrors that are geogra
 This section provides a convenient command to install all the recommended packages for a fully functional and optimized KDE Plasma experience on Arch Linux. This includes essential system utilities, desktop environment enhancements, multimedia codecs and applications, productivity tools, development tools, gaming-related software, and more. Simply copy and paste the following command into your terminal and press Enter to begin the installation process:
 
 ```bash
-paru -S bluez bluez-utils networkmanager rsync reflector timeshift topgrade pamac pacman-contrib xfsprogs kwalletmanager kdeconnect kdotool plasma6-themes-layan-git tela-icon-theme breezex-cursor-theme plasma6-applets-arch-update-notifier kvantum fastfetch fish ghostty legacy-launcher faugus-launcher starship loupe dunst alsa-plugins gst-libav gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly giflib glfw gst-plugins-base-libs libjpeg-turbo libva libxslt mpg123 openal opencl-icd-loader phonon-qt6-gstreamer-git amberol showtime onlyoffice-bin zed thunderbird thunderbird-ublock-origin firefox firefox-ublock-origin fluent-reader-bin discord kdepim-addons merkuro helix jre21-openjdk jre22-openjdk jre23-openjdk papers gamemode lib32-gamemode gamescope mangohud openrgb power-profiles-daemon proton-ge-custom protontricks wine winetricks wine-mono wine-gecko giflib lib32-giflib lib32-gnutls gnutls goverlay-git steam heroic-games-launcher-bin lutris sgdboop-bin lsfg-vk-git vulkan-tools lib32-libva lib32-vulkan-intel lib32-vulkan-radeon mcpelauncher-ui-git mcpelauncher-linux-git nerd-fonts ttf-liberation lib32-alsa-plugins lib32-giflib lib32-gst-plugins-base-libs lib32-gtk3 lib32-libjpeg-turbo lib32-mpg123 lib32-ocl-icd lib32-opencl-icd-loader lib32-openal gnome-disk-utility ufw flatpak mission-center obs-studio --needed
+paru -S bluez bluez-utils authselect fprintd networkmanager rsync reflector timeshift topgrade pamac pacman-contrib xfsprogs kwalletmanager kdeconnect kdotool plasma6-themes-layan-git tela-icon-theme breezex-cursor-theme plasma6-applets-arch-update-notifier kvantum fastfetch fish ghostty legacy-launcher faugus-launcher starship loupe dunst alsa-plugins gst-libav gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly giflib glfw gst-plugins-base-libs libjpeg-turbo libva libxslt mpg123 openal opencl-icd-loader phonon-qt6-gstreamer-git amberol showtime onlyoffice-bin zed thunderbird thunderbird-ublock-origin firefox firefox-ublock-origin fluent-reader-bin discord kdepim-addons merkuro helix jre21-openjdk jre22-openjdk jre23-openjdk papers gamemode lib32-gamemode gamescope mangohud openrgb power-profiles-daemon proton-ge-custom protontricks wine winetricks wine-mono wine-gecko giflib lib32-giflib lib32-gnutls gnutls goverlay-git steam heroic-games-launcher-bin lutris sgdboop-bin lsfg-vk-git vulkan-tools lib32-libva lib32-vulkan-intel lib32-vulkan-radeon mcpelauncher-ui-git mcpelauncher-linux-git nerd-fonts ttf-liberation lib32-alsa-plugins lib32-giflib lib32-gst-plugins-base-libs lib32-gtk3 lib32-libjpeg-turbo lib32-mpg123 lib32-ocl-icd lib32-opencl-icd-loader lib32-openal gnome-disk-utility ufw flatpak mission-center obs-studio --needed
 ```
 
 ## Package Categories and Descriptions
@@ -259,11 +259,13 @@ paru -S bluez bluez-utils networkmanager rsync reflector timeshift topgrade pama
 ### Core System & Utilities
 
 ```bash
-paru -S bluez bluez-utils networkmanager rsync reflector timeshift topgrade pamac pacman-contrib xfsprogs --needed
+paru -S bluez bluez-utils authselect fprintd networkmanager rsync reflector timeshift topgrade pamac pacman-contrib xfsprogs --needed
 ```
 
 *   `bluez`: Bluetooth stack for Linux.
 *   `bluez-utils`: Utilities for managing Bluetooth devices.
+*   `fprintd`: makes the fingerprint hardware work.
+*   `authselect` tells the system “yes, use fingerprint for login/sudo/screen unlock”.
 *   `networkmanager`: Network management daemon.
 *   `rsync`: Fast, versatile file copying tool.
 *   `reflector`:  Tool to find the fastest Arch Linux mirrors.
