@@ -251,7 +251,7 @@ Mirrors are servers that host Arch Linux packages. Using mirrors that are geogra
 This section provides a convenient command to install all the recommended packages for a fully functional and optimized KDE Plasma experience on Arch Linux. This includes essential system utilities, desktop environment enhancements, multimedia codecs and applications, productivity tools, development tools, gaming-related software, and more. Simply copy and paste the following command into your terminal and press Enter to begin the installation process:
 
 ```bash
-paru -S bluez bluez-utils authselect fprintd networkmanager rsync reflector timeshift topgrade pamac pacman-contrib xfsprogs kwalletmanager kdeconnect kdotool plasma6-themes-layan-git tela-icon-theme breezex-cursor-theme plasma6-applets-arch-update-notifier kvantum fastfetch fish ghostty legacy-launcher faugus-launcher starship loupe dunst alsa-plugins gst-libav gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly giflib glfw gst-plugins-base-libs libjpeg-turbo libva libxslt mpg123 openal opencl-icd-loader phonon-qt6-gstreamer-git amberol showtime onlyoffice-bin zed thunderbird thunderbird-ublock-origin firefox firefox-ublock-origin fluent-reader-bin discord kdepim-addons merkuro helix jre21-openjdk jre22-openjdk jre23-openjdk papers gamemode lib32-gamemode gamescope mangohud openrgb power-profiles-daemon proton-ge-custom protontricks wine winetricks wine-mono wine-gecko giflib lib32-giflib lib32-gnutls gnutls goverlay-git steam heroic-games-launcher-bin lutris sgdboop-bin lsfg-vk-git vulkan-tools lib32-libva lib32-vulkan-intel lib32-vulkan-radeon mcpelauncher-ui-git mcpelauncher-linux-git nerd-fonts ttf-liberation lib32-alsa-plugins lib32-giflib lib32-gst-plugins-base-libs lib32-gtk3 lib32-libjpeg-turbo lib32-mpg123 lib32-ocl-icd lib32-opencl-icd-loader lib32-openal gnome-disk-utility ufw flatpak mission-center obs-studio --needed
+paru -S bluez bluez-utils authselect fprintd networkmanager rsync reflector timeshift topgrade pamac pacman-contrib xfsprogs kwalletmanager kdeconnect kdotool plasma6-themes-layan-git tela-icon-theme breezex-cursor-theme plasma6-applets-arch-update-notifier kvantum fastfetch fish ghostty legacy-launcher faugus-launcher starship loupe dunst alsa-plugins gst-libav gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly giflib glfw gst-plugins-base-libs libjpeg-turbo libva libxslt mpg123 openal opencl-icd-loader phonon-qt6-gstreamer-git amberol showtime onlyoffice-bin zed thunderbird thunderbird-ublock-origin firefox firefox-ublock-origin fluent-reader-bin discord kdepim-addons merkuro helix jre21-openjdk jre22-openjdk jre23-openjdk papers gamemode lib32-gamemode gamescope mangohud openrgb power-profiles-daemon protonplus protontricks wine winetricks wine-mono wine-gecko giflib lib32-giflib lib32-gnutls gnutls goverlay-git steam heroic-games-launcher-bin lutris sgdboop-bin lsfg-vk-git vulkan-tools lib32-libva lib32-vulkan-intel lib32-vulkan-radeon mcpelauncher-ui-git mcpelauncher-linux-git nerd-fonts ttf-liberation lib32-alsa-plugins lib32-giflib lib32-gst-plugins-base-libs lib32-gtk3 lib32-libjpeg-turbo lib32-mpg123 lib32-ocl-icd lib32-opencl-icd-loader lib32-openal gnome-disk-utility ufw flatpak mission-center obs-studio --needed
 ```
 
 ## Package Categories and Descriptions
@@ -355,7 +355,7 @@ paru -S helix jre21-openjdk jre22-openjdk jre23-openjdk papers --needed
 ### Gaming
 
 ```bash
-paru -S gamemode gamescope lib32-gamemode mangohud openrgb power-profiles-daemon proton-ge-custom protontricks wine winetricks wine-mono wine-gecko giflib lib32-giflib lib32-gnutls gnutls goverlay-git steam heroic-games-launcher-bin lutris sgdboop-bin lsfg-vk-git --needed
+paru -S gamemode gamescope lib32-gamemode mangohud openrgb power-profiles-daemon protonplus protontricks wine winetricks wine-mono wine-gecko giflib lib32-giflib lib32-gnutls gnutls goverlay-git steam heroic-games-launcher-bin lutris sgdboop-bin lsfg-vk-git --needed
 ```
 
 *   `gamemode`: Optimizes system performance for gaming.
@@ -364,7 +364,7 @@ paru -S gamemode gamescope lib32-gamemode mangohud openrgb power-profiles-daemon
 *   `mangohud`:  Overlay for monitoring system performance in games.
 *   `openrgb`: Software to control RGB lighting on computer components.
 *   `power-profiles-daemon`: System service for managing power profiles.
-*   `proton-ge-custom`: Custom build of Proton for running Windows games.
+*   `protonplus`: Sleek, open-source GTK4/Libadwaita app for easily installing and managing Proton/Wine runners.
 *   `protontricks`: A tool to run wine tricks for Proton enabled games.
 *   `wine`: Compatibility layer for running Windows applications.
 *   `winetricks`: Script to install various components needed for Wine.
@@ -960,24 +960,26 @@ This section provides custom filters for uBlock Origin, specifically designed to
 
 ## Optimize Steam for Gaming
 
-This section guides you through configuring Steam to achieve optimal gaming performance, leveraging `proton-ge-custom` and custom launch options. `proton-ge-custom` (which was installed in the [Gaming sub-section](#gaming)) is crucial for enabling Windows games on Steam and Lutris. Custom launch options further allow you to maximize performance and enable advanced features.
+This section guides you through configuring Steam to achieve optimal gaming performance, leveraging `ProtonPlus` and custom launch options. `ProtonPlus` (which was installed in the [Gaming sub-section](#gaming)) is a modern graphical tool for easily installing, updating, and managing Proton- and Wine-based compatibility tools (like Proton-GE, Proton-CachyOS, Proton-EM, and Wine-GE) across launchers such as Steam and Lutris. We recommend downloading **Proton-GE (Latest)**, **Proton-CachyOS (Latest)**, and **Proton-EM** via ProtonPlus. This lets you set Valve's native `Proton Experimental` as the default in Steam, while switching to these more customizable versions for games needing extra features or that don't work with native Proton.
 
-1.  **Set `proton-ge-custom` as the default compatibility tool:**
-    *   Open Steam.
-    *   Navigate to `Settings > Compatibility (Steam Play)`.
-    *   Enable "Steam Play for all other titles" and select your installed `Proton-GE` version from the dropdown menu.
-    *   If you are also using Lutris, open Lutris and set `proton-ge-custom` as the runner for your games within their individual game settings.
+1. **Install recommended compatibility tools via `ProtonPlus` and set `Proton Experimental` as Steam's default:**
+   * Open `ProtonPlus`.
+   * Navigate to the **Steam** section and install the latest `Proton-GE`, `Proton-CachyOS`, and `Proton-EM` versions.
+   * Open Steam.
+   * Navigate to `Settings > Compatibility (Steam Play)`.
+   * Enable "Steam Play for all other titles" and select `Proton Experimental` from the dropdown menu.
+   * **Note:** For games needing more features or not working with native Proton Experimental, right-click the game in your Steam library > `Properties` > `Compatibility` tab > check "Force the use of a specific Steam Play compatibility tool" > select `Proton-GE`, `Proton-CachyOS`, or `Proton-EM` from the dropdown.
+   * If you are also using Lutris, in `ProtonPlus` navigate to the **Lutris** section and install the latest `Wine-GE`, then open Lutris and set `Wine-GE` as the runner for your games within their individual game settings.
 
-2.  **Configure Steam launch options for individual games:**
-    For each game you want to optimize:
-    *   Right-click the game in your Steam library.
-    *   Select `Properties`.
-    *   In the `General` tab, locate the `Launch Options` field.
-    *   Add the following recommended parameters:
-
-    ```plaintext
-    PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 PROTON_FSR4_UPGRADE=1 gamemoderun %command%
-    ```
+2. **Configure Steam launch options for individual games:**
+   For each game you want to optimize:
+   * Right-click the game in your Steam library.
+   * Select `Properties`.
+   * In the `General` tab, locate the `Launch Options` field.
+   * Add the following recommended parameters:
+   ```plaintext
+   PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 PROTON_FSR4_UPGRADE=1 gamemoderun %command%
+   ```
 
     *   **Explanation of parameters**:
         *   `PROTON_ENABLE_WAYLAND=1`: Enables Wayland integration, which can improve scaling and High Dynamic Range (HDR) support.
@@ -1005,14 +1007,6 @@ This section guides you through configuring Steam to achieve optimal gaming perf
 
     ```bash
     echo $XDG_SESSION_TYPE  # This command should output "wayland"
-    ```
-
-5.  **Verify `proton-ge-custom` installation:**
-    
-    To confirm `proton-ge-custom` is properly recognized by Steam, you can check its installation directory:
-
-    ```bash
-    ls ~/.local/share/Steam/compatibilitytools.d  # This should list your Proton-GE-Custom version
     ```
 
     After these configurations, your Steam games should be optimized for a better gaming experience.
