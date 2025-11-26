@@ -17,6 +17,13 @@ This guide will walk you through the entire process of installing Arch Linux usi
 2.  Boot your computer from the live medium. This usually involves pressing a specific key during startup (e.g., `F2`, `F10`, `F12`, `Del`) to enter the boot menu or BIOS/UEFI settings.
 3.  Once booted, you will be presented with an Arch Linux command-line environment. You should see a prompt like `#`.
 
+> **Laptop or small screen?**  
+> Run this **once** right after booting the live ISO to make the terminal instantly readable:
+> 
+> ```bash
+> setfont ter-132b
+> ```
+
 ## Step 2: Identify Your Drives (Crucial Pre-installation Check)
 Before running `archinstall`, it is **highly recommended** to identify your storage drives to avoid accidentally installing Arch Linux on the wrong disk and losing valuable data.
 
