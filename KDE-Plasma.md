@@ -978,15 +978,18 @@ This section guides you through configuring Steam to achieve optimal gaming perf
    * In the `General` tab, locate the `Launch Options` field.
    * Add the following recommended parameters:
    ```plaintext
-   PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 PROTON_FSR4_UPGRADE=1 gamemoderun %command%
+   PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 PROTON_FSR4_UPGRADE=1 PROTON_FSR4_RDNA3_UPGRADE=1 PROTON_FSR3_UPGRADE=1 gamemoderun %command%
    ```
 
     *   **Explanation of parameters**:
         *   `PROTON_ENABLE_WAYLAND=1`: Enables Wayland integration, which can improve scaling and High Dynamic Range (HDR) support.
         *   `PROTON_ENABLE_HDR=1`: Activates HDR output. Your monitor must support HDR for this to have an effect.
         *   `SteamDeck=1`: Applies optimizations intended for Steam Deck, which can benefit desktop Linux users.
-        *   `PROTON_FSR4_UPGRADE=1`: Enables experimental FidelityFX Super Resolution 4.0 upscaling.
+        *   `PROTON_FSR4_UPGRADE=1`: Automatically downloads and upgrades amdxcffx64.dll in games using FSR 3.1 to FSR 4 for improved upscaling. Defaults to version 4.0.2. Disables AMD Anti-Lag 2 (due to compatibility issues). Specify a version if needed (e.g., "4.0.1").
+        *   `PROTON_FSR4_RDNA3_UPGRADE=1`: Same as above, but optimized for AMD RDNA3 GPUs. Enables extra compatibility options and defaults to DLL version 4.0.0.
+        *   `PROTON_FSR3_UPGRADE=1`: Enables experimental FidelityFX Super Resolution 3 upscaling.
         *   `PROTON_DLSS_UPGRADE=1`: Enables experimental Deep Learning Super Sampling (DLSS) for NVIDIA GPUs.
+        *   `PROTON_XESS_UPGRADE=1`: Upgrades Intel XeSS DLLs (libxess.dll) to the latest version.
         *   `gamemoderun`: Utilizes `gamemode` to dynamically optimize CPU and GPU performance when the game is running.
         *   `mangohud`: Launches MangoHud, an in-game overlay to monitor FPS, GPU usage, temperatures, and more.
 
