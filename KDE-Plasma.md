@@ -99,15 +99,15 @@ The Arch User Repository (AUR) is a community-driven repository containing packa
 Since building from source can be time-consuming, we'll install the pre-built binary version of `paru` (paru-bin)
 
 1.  **Install paru-bin:**
-    Run these commands to install `paru-bin`:
+    Run these commands to install `paru`:
 
     ```bash
     sudo pacman -S git base-devel --needed
-    git clone https://aur.archlinux.org/paru-bin.git
-    cd paru-bin
+    git clone https://aur.archlinux.org/paru.git
+    cd paru
     makepkg -si --needed
     cd ..
-    rm -rf paru-bin
+    rm -rf paru
     paru --version
     ```
 
